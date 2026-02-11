@@ -54,7 +54,7 @@ import {
   SortableContext,
   sortableKeyboardCoordinates,
   useSortable,
-  verticalListSortingStrategy,
+  rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
@@ -91,19 +91,33 @@ const dateDe = (iso: string | null): string => {
   }
 };
 
-// Widget IDs for drag and drop
+// Widget IDs for each individual card
 const WIDGET_IDS = {
-  KPI_CARDS: "kpi-cards",
-  PERIOD_KPIS: "period-kpis",
-  PERIODS_OVERVIEW: "periods-overview",
-  CHARTS: "charts",
+  TOTAL_ENTITIES: "total-entities",
+  ACTIVE_ENTITIES: "active-entities",
+  COUNTRIES: "countries",
+  FOREIGN_CURRENCY: "foreign-currency",
+  ACTIVE_PERIOD: "active-period",
+  PERIOD_STATUS: "period-status",
+  TOTAL_PERIODS: "total-periods",
+  ALL_PERIODS_LIST: "all-periods-list",
+  PERIOD_STATUS_CHART: "period-status-chart",
+  ACTIVE_ENTITIES_GAUGE: "active-entities-gauge",
+  ENTITIES_BY_COUNTRY: "entities-by-country",
 } as const;
 
 const DEFAULT_WIDGET_ORDER = [
-  WIDGET_IDS.KPI_CARDS,
-  WIDGET_IDS.PERIOD_KPIS,
-  WIDGET_IDS.PERIODS_OVERVIEW,
-  WIDGET_IDS.CHARTS,
+  WIDGET_IDS.TOTAL_ENTITIES,
+  WIDGET_IDS.ACTIVE_ENTITIES,
+  WIDGET_IDS.COUNTRIES,
+  WIDGET_IDS.FOREIGN_CURRENCY,
+  WIDGET_IDS.ACTIVE_PERIOD,
+  WIDGET_IDS.PERIOD_STATUS,
+  WIDGET_IDS.TOTAL_PERIODS,
+  WIDGET_IDS.ALL_PERIODS_LIST,
+  WIDGET_IDS.PERIOD_STATUS_CHART,
+  WIDGET_IDS.ACTIVE_ENTITIES_GAUGE,
+  WIDGET_IDS.ENTITIES_BY_COUNTRY,
 ];
 
 const STORAGE_KEY = "dashboard-widget-order";
@@ -124,8 +138,12 @@ function SortableWidget({ id, children }: SortableWidgetProps) {
 
   return (
     <div ref={setNodeRef} style={style} className="relative">
-      <div className="absolute left-2 top-2 z-10 cursor-grab active:cursor-grabbing" {...attributes} {...listeners}>
-        <GripVertical className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+      <div
+        className="absolute left-2 top-2 z-10 cursor-grab active:cursor-grabbing rounded p-1 hover:bg-muted/50 transition-colors"
+        {...attributes}
+        {...listeners}
+      >
+        <GripVertical className="h-4 w-4 text-muted-foreground hover:text-foreground" />
       </div>
       {children}
     </div>
@@ -219,414 +237,416 @@ export function DashboardPage() {
     );
   }
 
-  // Widget components
+  // Individual widget components
   const widgets: Record<string, React.ReactNode> = {
-    [WIDGET_IDS.KPI_CARDS]: (
-      <div className="grid gap-4 md:grid-cols-4">
-        <Card>
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium uppercase tracking-wide">
-                {t("dashboard.entities")}
-              </CardDescription>
-              <Building2 className="h-4 w-4 text-muted-foreground" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            {isAnyLoading ? (
-              <Skeleton className="h-9 w-20" />
-            ) : (
-              <div className="space-y-1">
-                <div className="text-3xl font-bold tracking-tight">{totalEntities}</div>
-                <p className="text-xs text-muted-foreground">
-                  {activeEntities} {t("dashboard.active")} ({Math.round((activeEntities / totalEntities) * 100)}%)
-                </p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium uppercase tracking-wide">
-                {t("dashboard.activeEntities")}
-              </CardDescription>
-              <CheckCircle className="h-4 w-4 text-green-600" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            {isAnyLoading ? (
-              <Skeleton className="h-9 w-20" />
-            ) : (
-              <div className="space-y-2">
-                <div className="text-3xl font-bold tracking-tight">{activeEntities}</div>
-                <Progress
-                  value={(activeEntities / totalEntities) * 100}
-                  className="h-2"
-                />
-              </div>
-            )}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium uppercase tracking-wide">
-                {t("dashboard.countries")}
-              </CardDescription>
-              <Globe className="h-4 w-4 text-blue-600" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            {isAnyLoading ? (
-              <Skeleton className="h-9 w-20" />
-            ) : (
-              <div className="space-y-1">
-                <div className="text-3xl font-bold tracking-tight">{countries.size}</div>
-                <p className="text-xs text-muted-foreground">
-                  {t("dashboard.globalPresence")}
-                </p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium uppercase tracking-wide">
-                {t("dashboard.foreignCurrency")}
-              </CardDescription>
-              <Coins className="h-4 w-4 text-amber-600" />
-            </div>
-          </CardHeader>
-          <CardContent>
-            {isAnyLoading ? (
-              <Skeleton className="h-9 w-20" />
-            ) : (
-              <div className="space-y-1">
-                <div className="text-3xl font-bold tracking-tight">{foreignCurrency}</div>
-                <p className="text-xs text-muted-foreground">
-                  {Math.round((foreignCurrency / totalEntities) * 100)}% {t("dashboard.ofTotal")}
-                </p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      </div>
-    ),
-
-    [WIDGET_IDS.PERIOD_KPIS]: activePeriod && (
-      <div className="grid gap-4 md:grid-cols-3">
-        <Card>
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium uppercase tracking-wide">
-                {t("dashboard.activePeriod")}
-              </CardDescription>
-              <Calendar className="h-4 w-4 text-purple-600" />
-            </div>
-          </CardHeader>
-          <CardContent>
+    [WIDGET_IDS.TOTAL_ENTITIES]: (
+      <Card>
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardDescription className="text-xs font-medium uppercase tracking-wide">
+              {t("dashboard.entities")}
+            </CardDescription>
+            <Building2 className="h-4 w-4 text-muted-foreground" />
+          </div>
+        </CardHeader>
+        <CardContent>
+          {isAnyLoading ? (
+            <Skeleton className="h-9 w-20" />
+          ) : (
             <div className="space-y-1">
-              <div className="text-2xl font-bold tracking-tight">{activePeriod.rem_label || activePeriod.p3_name}</div>
+              <div className="text-3xl font-bold tracking-tight">{totalEntities}</div>
               <p className="text-xs text-muted-foreground">
-                {dateDe(activePeriod.rem_startdate)} - {dateDe(activePeriod.rem_enddate)}
+                {activeEntities} {t("dashboard.active")} ({Math.round((activeEntities / totalEntities) * 100)}%)
               </p>
             </div>
-          </CardContent>
-        </Card>
+          )}
+        </CardContent>
+      </Card>
+    ),
 
-        <Card>
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium uppercase tracking-wide">
-                {t("dashboard.periodStatus")}
-              </CardDescription>
-              <FileCheck className="h-4 w-4 text-indigo-600" />
-            </div>
-          </CardHeader>
-          <CardContent>
+    [WIDGET_IDS.ACTIVE_ENTITIES]: (
+      <Card>
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardDescription className="text-xs font-medium uppercase tracking-wide">
+              {t("dashboard.activeEntities")}
+            </CardDescription>
+            <CheckCircle className="h-4 w-4 text-green-600" />
+          </div>
+        </CardHeader>
+        <CardContent>
+          {isAnyLoading ? (
+            <Skeleton className="h-9 w-20" />
+          ) : (
             <div className="space-y-2">
-              <Badge
-                variant="outline"
-                className={
-                  activePeriod.rem_status === PeriodStatus.Open
-                    ? "border-green-500 text-green-700"
-                    : activePeriod.rem_status === PeriodStatus.InProgress
-                    ? "border-blue-500 text-blue-700"
-                    : activePeriod.rem_status === PeriodStatus.Closed
-                    ? "border-orange-500 text-orange-700"
-                    : "border-red-500 text-red-700"
-                }
-              >
-                {periodStatusLabel(activePeriod.rem_status, t)}
-              </Badge>
+              <div className="text-3xl font-bold tracking-tight">{activeEntities}</div>
+              <Progress
+                value={(activeEntities / totalEntities) * 100}
+                className="h-2"
+              />
             </div>
-          </CardContent>
-        </Card>
+          )}
+        </CardContent>
+      </Card>
+    ),
 
-        <Card>
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium uppercase tracking-wide">
-                {t("dashboard.totalPeriods")}
-              </CardDescription>
-              <Clock className="h-4 w-4 text-slate-600" />
-            </div>
-          </CardHeader>
-          <CardContent>
+    [WIDGET_IDS.COUNTRIES]: (
+      <Card>
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardDescription className="text-xs font-medium uppercase tracking-wide">
+              {t("dashboard.countries")}
+            </CardDescription>
+            <Globe className="h-4 w-4 text-blue-600" />
+          </div>
+        </CardHeader>
+        <CardContent>
+          {isAnyLoading ? (
+            <Skeleton className="h-9 w-20" />
+          ) : (
             <div className="space-y-1">
-              <div className="text-3xl font-bold tracking-tight">{periods.length}</div>
+              <div className="text-3xl font-bold tracking-tight">{countries.size}</div>
               <p className="text-xs text-muted-foreground">
-                {periods.filter(p => p.rem_status === PeriodStatus.Open || p.rem_status === PeriodStatus.InProgress).length} {t("dashboard.active")}
+                {t("dashboard.globalPresence")}
               </p>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          )}
+        </CardContent>
+      </Card>
     ),
 
-    [WIDGET_IDS.PERIODS_OVERVIEW]: periods.length > 0 && (
-      <div className="grid gap-4 md:grid-cols-2">
-        {/* All Periods List */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5" />
-                  {t("dashboard.allPeriods")}
-                </CardTitle>
-                <CardDescription className="mt-1">
-                  {t("dashboard.periodsInSystem", { count: periods.length })}
-                </CardDescription>
-              </div>
+    [WIDGET_IDS.FOREIGN_CURRENCY]: (
+      <Card>
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardDescription className="text-xs font-medium uppercase tracking-wide">
+              {t("dashboard.foreignCurrency")}
+            </CardDescription>
+            <Coins className="h-4 w-4 text-amber-600" />
+          </div>
+        </CardHeader>
+        <CardContent>
+          {isAnyLoading ? (
+            <Skeleton className="h-9 w-20" />
+          ) : (
+            <div className="space-y-1">
+              <div className="text-3xl font-bold tracking-tight">{foreignCurrency}</div>
+              <p className="text-xs text-muted-foreground">
+                {Math.round((foreignCurrency / totalEntities) * 100)}% {t("dashboard.ofTotal")}
+              </p>
             </div>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-0 divide-y">
-              {periods.map((period) => (
-                <div key={period.rem_periodid} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
-                  <div className="flex-1">
-                    <p className="font-medium">{period.p3_name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {dateDe(period.rem_startdate)} - {dateDe(period.rem_enddate)}
-                    </p>
-                  </div>
-                  <Badge
-                    variant="outline"
-                    className={
-                      period.rem_status === PeriodStatus.Open
-                        ? "border-green-500 text-green-700"
-                        : period.rem_status === PeriodStatus.InProgress
-                        ? "border-blue-500 text-blue-700"
-                        : period.rem_status === PeriodStatus.Closed
-                        ? "border-orange-500 text-orange-700"
-                        : "border-red-500 text-red-700"
-                    }
-                  >
-                    {periodStatusLabel(period.rem_status, t)}
-                  </Badge>
+          )}
+        </CardContent>
+      </Card>
+    ),
+
+    [WIDGET_IDS.ACTIVE_PERIOD]: activePeriod && (
+      <Card>
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardDescription className="text-xs font-medium uppercase tracking-wide">
+              {t("dashboard.activePeriod")}
+            </CardDescription>
+            <Calendar className="h-4 w-4 text-purple-600" />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-1">
+            <div className="text-2xl font-bold tracking-tight">{activePeriod.rem_label || activePeriod.p3_name}</div>
+            <p className="text-xs text-muted-foreground">
+              {dateDe(activePeriod.rem_startdate)} - {dateDe(activePeriod.rem_enddate)}
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    ),
+
+    [WIDGET_IDS.PERIOD_STATUS]: activePeriod && (
+      <Card>
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardDescription className="text-xs font-medium uppercase tracking-wide">
+              {t("dashboard.periodStatus")}
+            </CardDescription>
+            <FileCheck className="h-4 w-4 text-indigo-600" />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-2">
+            <Badge
+              variant="outline"
+              className={
+                activePeriod.rem_status === PeriodStatus.Open
+                  ? "border-green-500 text-green-700"
+                  : activePeriod.rem_status === PeriodStatus.InProgress
+                  ? "border-blue-500 text-blue-700"
+                  : activePeriod.rem_status === PeriodStatus.Closed
+                  ? "border-orange-500 text-orange-700"
+                  : "border-red-500 text-red-700"
+              }
+            >
+              {periodStatusLabel(activePeriod.rem_status, t)}
+            </Badge>
+          </div>
+        </CardContent>
+      </Card>
+    ),
+
+    [WIDGET_IDS.TOTAL_PERIODS]: (
+      <Card>
+        <CardHeader className="pb-2">
+          <div className="flex items-center justify-between">
+            <CardDescription className="text-xs font-medium uppercase tracking-wide">
+              {t("dashboard.totalPeriods")}
+            </CardDescription>
+            <Clock className="h-4 w-4 text-slate-600" />
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-1">
+            <div className="text-3xl font-bold tracking-tight">{periods.length}</div>
+            <p className="text-xs text-muted-foreground">
+              {periods.filter(p => p.rem_status === PeriodStatus.Open || p.rem_status === PeriodStatus.InProgress).length} {t("dashboard.active")}
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    ),
+
+    [WIDGET_IDS.ALL_PERIODS_LIST]: periods.length > 0 && (
+      <Card className="md:col-span-2">
+        <CardHeader>
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="flex items-center gap-2">
+                <Calendar className="h-5 w-5" />
+                {t("dashboard.allPeriods")}
+              </CardTitle>
+              <CardDescription className="mt-1">
+                {t("dashboard.periodsInSystem", { count: periods.length })}
+              </CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-0 divide-y">
+            {periods.map((period) => (
+              <div key={period.rem_periodid} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
+                <div className="flex-1">
+                  <p className="font-medium">{period.p3_name}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {dateDe(period.rem_startdate)} - {dateDe(period.rem_enddate)}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Period Status Distribution */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileCheck className="h-5 w-5" />
-              Period Status Distribution
-            </CardTitle>
-            <CardDescription>
-              Status breakdown across all periods
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={240}>
-              <PieChart>
-                <Pie
-                  data={[
-                    {
-                      name: "Open",
-                      value: periods.filter((p) => p.rem_status === PeriodStatus.Open).length,
-                      fill: "#10b981",
-                    },
-                    {
-                      name: "In Progress",
-                      value: periods.filter((p) => p.rem_status === PeriodStatus.InProgress).length,
-                      fill: "#3b82f6",
-                    },
-                    {
-                      name: "Closed",
-                      value: periods.filter((p) => p.rem_status === PeriodStatus.Closed).length,
-                      fill: "#f59e0b",
-                    },
-                    {
-                      name: "Locked",
-                      value: periods.filter((p) => p.rem_status === PeriodStatus.Locked).length,
-                      fill: "#ef4444",
-                    },
-                  ].filter((item) => item.value > 0)}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={60}
-                  outerRadius={90}
-                  paddingAngle={5}
-                  dataKey="value"
-                  label={({ name, value }) => `${name}: ${value}`}
+                <Badge
+                  variant="outline"
+                  className={
+                    period.rem_status === PeriodStatus.Open
+                      ? "border-green-500 text-green-700"
+                      : period.rem_status === PeriodStatus.InProgress
+                      ? "border-blue-500 text-blue-700"
+                      : period.rem_status === PeriodStatus.Closed
+                      ? "border-orange-500 text-orange-700"
+                      : "border-red-500 text-red-700"
+                  }
                 >
-                </Pie>
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "hsl(var(--background))",
-                    border: "1px solid hsl(var(--border))",
-                    borderRadius: "6px",
-                  }}
-                />
-              </PieChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      </div>
+                  {periodStatusLabel(period.rem_status, t)}
+                </Badge>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     ),
 
-    [WIDGET_IDS.CHARTS]: entities.length > 0 && (
-      <div className="grid gap-4 md:grid-cols-2">
-        {/* Active Entities Gauge */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5" />
-              {t("dashboard.activeEntities")} Status
-            </CardTitle>
-            <CardDescription>
-              {activeEntities} of {totalEntities} entities active
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={200}>
-              <RadialBarChart
-                cx="50%"
-                cy="50%"
-                innerRadius="60%"
-                outerRadius="100%"
-                barSize={20}
+    [WIDGET_IDS.PERIOD_STATUS_CHART]: periods.length > 0 && (
+      <Card className="md:col-span-2">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FileCheck className="h-5 w-5" />
+            Period Status Distribution
+          </CardTitle>
+          <CardDescription>
+            Status breakdown across all periods
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={240}>
+            <PieChart>
+              <Pie
                 data={[
                   {
-                    name: "Active",
-                    value: Math.round((activeEntities / totalEntities) * 100),
+                    name: "Open",
+                    value: periods.filter((p) => p.rem_status === PeriodStatus.Open).length,
                     fill: "#10b981",
                   },
-                ]}
-                startAngle={180}
-                endAngle={0}
+                  {
+                    name: "In Progress",
+                    value: periods.filter((p) => p.rem_status === PeriodStatus.InProgress).length,
+                    fill: "#3b82f6",
+                  },
+                  {
+                    name: "Closed",
+                    value: periods.filter((p) => p.rem_status === PeriodStatus.Closed).length,
+                    fill: "#f59e0b",
+                  },
+                  {
+                    name: "Locked",
+                    value: periods.filter((p) => p.rem_status === PeriodStatus.Locked).length,
+                    fill: "#ef4444",
+                  },
+                ].filter((item) => item.value > 0)}
+                cx="50%"
+                cy="50%"
+                innerRadius={60}
+                outerRadius={90}
+                paddingAngle={5}
+                dataKey="value"
+                label={({ name, value }) => `${name}: ${value}`}
               >
-                <RadialBar
-                  background
-                  dataKey="value"
-                  cornerRadius={10}
-                />
-                <text
-                  x="50%"
-                  y="50%"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className="fill-foreground"
-                >
-                  <tspan
-                    x="50%"
-                    dy="-0.5em"
-                    className="text-3xl font-bold"
-                  >
-                    {Math.round((activeEntities / totalEntities) * 100)}%
-                  </tspan>
-                  <tspan
-                    x="50%"
-                    dy="1.5em"
-                    className="text-sm fill-muted-foreground"
-                  >
-                    Active
-                  </tspan>
-                </text>
-              </RadialBarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
+              </Pie>
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "hsl(var(--background))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "6px",
+                }}
+              />
+            </PieChart>
+          </ResponsiveContainer>
+        </CardContent>
+      </Card>
+    ),
 
-        {/* Entities by Country Chart */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Building2 className="h-5 w-5" />
-              {t("dashboard.entitiesByCountry")}
-            </CardTitle>
-            <CardDescription>
-              {totalEntities} {t("dashboard.entities")} · {countries.size} {t("dashboard.countries")}
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={200}>
-              <BarChart
-                data={Array.from(countries)
-                  .sort()
-                  .map((country) => ({
-                    country,
-                    count: entities.filter((e) => e.rem_country === country).length,
-                  }))}
-                margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
+    [WIDGET_IDS.ACTIVE_ENTITIES_GAUGE]: entities.length > 0 && (
+      <Card className="md:col-span-2">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <CheckCircle className="h-5 w-5" />
+            {t("dashboard.activeEntities")} Status
+          </CardTitle>
+          <CardDescription>
+            {activeEntities} of {totalEntities} entities active
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={200}>
+            <RadialBarChart
+              cx="50%"
+              cy="50%"
+              innerRadius="60%"
+              outerRadius="100%"
+              barSize={20}
+              data={[
+                {
+                  name: "Active",
+                  value: Math.round((activeEntities / totalEntities) * 100),
+                  fill: "#10b981",
+                },
+              ]}
+              startAngle={180}
+              endAngle={0}
+            >
+              <RadialBar
+                background
+                dataKey="value"
+                cornerRadius={10}
+              />
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                className="fill-foreground"
               >
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis
-                  dataKey="country"
-                  className="text-xs fill-muted-foreground"
-                  tick={{ fontSize: 12 }}
-                />
-                <YAxis
-                  className="text-xs fill-muted-foreground"
-                  tick={{ fontSize: 12 }}
-                />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "hsl(var(--background))",
-                    border: "1px solid hsl(var(--border))",
-                    borderRadius: "6px",
-                  }}
-                />
-                <Bar dataKey="count" radius={[4, 4, 0, 0]}>
-                  {Array.from(countries)
-                    .sort()
-                    .map((_, index) => {
-                      const colors = [
-                        "#3b82f6",
-                        "#10b981",
-                        "#8b5cf6",
-                        "#f59e0b",
-                        "#ec4899",
-                        "#14b8a6",
-                        "#6366f1",
-                        "#ef4444",
-                        "#eab308",
-                        "#06b6d4",
-                      ];
-                      return (
-                        <Cell
-                          key={`cell-${index}`}
-                          fill={colors[index % colors.length]}
-                        />
-                      );
-                    })}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          </CardContent>
-        </Card>
-      </div>
+                <tspan
+                  x="50%"
+                  dy="-0.5em"
+                  className="text-3xl font-bold"
+                >
+                  {Math.round((activeEntities / totalEntities) * 100)}%
+                </tspan>
+                <tspan
+                  x="50%"
+                  dy="1.5em"
+                  className="text-sm fill-muted-foreground"
+                >
+                  Active
+                </tspan>
+              </text>
+            </RadialBarChart>
+          </ResponsiveContainer>
+        </CardContent>
+      </Card>
+    ),
+
+    [WIDGET_IDS.ENTITIES_BY_COUNTRY]: entities.length > 0 && (
+      <Card className="md:col-span-2">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Building2 className="h-5 w-5" />
+            {t("dashboard.entitiesByCountry")}
+          </CardTitle>
+          <CardDescription>
+            {totalEntities} {t("dashboard.entities")} · {countries.size} {t("dashboard.countries")}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ResponsiveContainer width="100%" height={200}>
+            <BarChart
+              data={Array.from(countries)
+                .sort()
+                .map((country) => ({
+                  country,
+                  count: entities.filter((e) => e.rem_country === country).length,
+                }))}
+              margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+              <XAxis
+                dataKey="country"
+                className="text-xs fill-muted-foreground"
+                tick={{ fontSize: 12 }}
+              />
+              <YAxis
+                className="text-xs fill-muted-foreground"
+                tick={{ fontSize: 12 }}
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "hsl(var(--background))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "6px",
+                }}
+              />
+              <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                {Array.from(countries)
+                  .sort()
+                  .map((_, index) => {
+                    const colors = [
+                      "#3b82f6",
+                      "#10b981",
+                      "#8b5cf6",
+                      "#f59e0b",
+                      "#ec4899",
+                      "#14b8a6",
+                      "#6366f1",
+                      "#ef4444",
+                      "#eab308",
+                      "#06b6d4",
+                    ];
+                    return (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={colors[index % colors.length]}
+                      />
+                    );
+                  })}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </CardContent>
+      </Card>
     ),
   };
 
@@ -651,8 +671,8 @@ export function DashboardPage() {
 
       {/* Drag and Drop Context */}
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-        <SortableContext items={widgetOrder} strategy={verticalListSortingStrategy}>
-          <div className="space-y-4">
+        <SortableContext items={widgetOrder} strategy={rectSortingStrategy}>
+          <div className="grid gap-4 md:grid-cols-4">
             {widgetOrder.map((widgetId) => {
               const widget = widgets[widgetId];
               if (!widget) return null;
