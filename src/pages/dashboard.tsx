@@ -23,6 +23,21 @@ import {
   Clock,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+  PieChart,
+  Pie,
+  RadialBarChart,
+  RadialBar,
+  Legend,
+} from "recharts";
 
 import { useEntities } from "@/hooks/use-entities";
 import { useActivePeriod, usePeriods } from "@/hooks/use-periods";
@@ -296,113 +311,251 @@ export function DashboardPage() {
         </div>
       )}
 
-      {/* All Periods */}
-      {periods.length > 0 && (
-        <Card>
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5" />
-                  {t("dashboard.allPeriods")}
-                </CardTitle>
-                <CardDescription className="mt-1">
-                  {t("dashboard.periodsInSystem", { count: periods.length })}
-                </CardDescription>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-0 divide-y">
-              {periods.map((period) => (
-                <div key={period.rem_periodid} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
-                  <div className="flex-1">
-                    <p className="font-medium">{period.p3_name}</p>
-                    <p className="text-xs text-muted-foreground">
-                      {dateDe(period.rem_startdate)} - {dateDe(period.rem_enddate)}
-                    </p>
-                  </div>
-                  <Badge
-                    variant="outline"
-                    className={
-                      period.rem_status === PeriodStatus.Open
-                        ? "border-green-500 text-green-700"
-                        : period.rem_status === PeriodStatus.InProgress
-                        ? "border-blue-500 text-blue-700"
-                        : period.rem_status === PeriodStatus.Closed
-                        ? "border-orange-500 text-orange-700"
-                        : "border-red-500 text-red-700"
-                    }
-                  >
-                    {periodStatusLabel(period.rem_status, t)}
-                  </Badge>
+      {/* Periods Overview */}
+      <div className="grid gap-4 md:grid-cols-2">
+        {/* All Periods List */}
+        {periods.length > 0 && (
+          <Card>
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="flex items-center gap-2">
+                    <Calendar className="h-5 w-5" />
+                    {t("dashboard.allPeriods")}
+                  </CardTitle>
+                  <CardDescription className="mt-1">
+                    {t("dashboard.periodsInSystem", { count: periods.length })}
+                  </CardDescription>
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Entities by Country */}
-      {entities.length > 0 && (
-        <Card>
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div>
-                <CardTitle className="flex items-center gap-2">
-                  <Building2 className="h-5 w-5" />
-                  {t("dashboard.entitiesByCountry")}
-                </CardTitle>
-                <CardDescription className="mt-1">
-                  {totalEntities} {t("dashboard.entities")} · {countries.size} {t("dashboard.countries")}
-                </CardDescription>
               </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {Array.from(countries)
-                .sort()
-                .map((country, index) => {
-                  const count = entities.filter((e) => e.rem_country === country).length;
-                  const percentage = Math.round((count / totalEntities) * 100);
-                  const colors = [
-                    'bg-blue-600',
-                    'bg-green-600',
-                    'bg-purple-600',
-                    'bg-orange-600',
-                    'bg-pink-600',
-                    'bg-teal-600',
-                    'bg-indigo-600',
-                    'bg-red-600',
-                    'bg-yellow-600',
-                    'bg-cyan-600',
-                  ];
-                  const barColor = colors[index % colors.length];
-                  return (
-                    <div key={country} className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <span className="font-semibold text-sm uppercase tracking-wide min-w-[3rem]">{country}</span>
-                          <span className="text-2xl font-bold">{count}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm font-semibold tabular-nums">
-                            {percentage}%
-                          </span>
-                        </div>
-                      </div>
-                      <Progress
-                        value={percentage}
-                        className="h-2"
-                      />
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-0 divide-y">
+                {periods.map((period) => (
+                  <div key={period.rem_periodid} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
+                    <div className="flex-1">
+                      <p className="font-medium">{period.p3_name}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {dateDe(period.rem_startdate)} - {dateDe(period.rem_enddate)}
+                      </p>
                     </div>
-                  );
-                })}
-            </div>
-          </CardContent>
-        </Card>
-      )}
+                    <Badge
+                      variant="outline"
+                      className={
+                        period.rem_status === PeriodStatus.Open
+                          ? "border-green-500 text-green-700"
+                          : period.rem_status === PeriodStatus.InProgress
+                          ? "border-blue-500 text-blue-700"
+                          : period.rem_status === PeriodStatus.Closed
+                          ? "border-orange-500 text-orange-700"
+                          : "border-red-500 text-red-700"
+                      }
+                    >
+                      {periodStatusLabel(period.rem_status, t)}
+                    </Badge>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Period Status Distribution */}
+        {periods.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileCheck className="h-5 w-5" />
+                Period Status Distribution
+              </CardTitle>
+              <CardDescription>
+                Status breakdown across all periods
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={240}>
+                <PieChart>
+                  <Pie
+                    data={[
+                      {
+                        name: "Open",
+                        value: periods.filter((p) => p.rem_status === PeriodStatus.Open).length,
+                        fill: "#10b981",
+                      },
+                      {
+                        name: "In Progress",
+                        value: periods.filter((p) => p.rem_status === PeriodStatus.InProgress).length,
+                        fill: "#3b82f6",
+                      },
+                      {
+                        name: "Closed",
+                        value: periods.filter((p) => p.rem_status === PeriodStatus.Closed).length,
+                        fill: "#f59e0b",
+                      },
+                      {
+                        name: "Locked",
+                        value: periods.filter((p) => p.rem_status === PeriodStatus.Locked).length,
+                        fill: "#ef4444",
+                      },
+                    ].filter((item) => item.value > 0)}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={90}
+                    paddingAngle={5}
+                    dataKey="value"
+                    label={({ name, value }) => `${name}: ${value}`}
+                  >
+                  </Pie>
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "hsl(var(--background))",
+                      border: "1px solid hsl(var(--border))",
+                      borderRadius: "6px",
+                    }}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        )}
+      </div>
+
+      {/* Charts Row */}
+      <div className="grid gap-4 md:grid-cols-2">
+        {/* Active Entities Gauge */}
+        {entities.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <CheckCircle className="h-5 w-5" />
+                {t("dashboard.activeEntities")} Status
+              </CardTitle>
+              <CardDescription>
+                {activeEntities} of {totalEntities} entities active
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={200}>
+                <RadialBarChart
+                  cx="50%"
+                  cy="50%"
+                  innerRadius="60%"
+                  outerRadius="100%"
+                  barSize={20}
+                  data={[
+                    {
+                      name: "Active",
+                      value: Math.round((activeEntities / totalEntities) * 100),
+                      fill: "#10b981",
+                    },
+                  ]}
+                  startAngle={180}
+                  endAngle={0}
+                >
+                  <RadialBar
+                    background
+                    dataKey="value"
+                    cornerRadius={10}
+                  />
+                  <text
+                    x="50%"
+                    y="50%"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="fill-foreground"
+                  >
+                    <tspan
+                      x="50%"
+                      dy="-0.5em"
+                      className="text-3xl font-bold"
+                    >
+                      {Math.round((activeEntities / totalEntities) * 100)}%
+                    </tspan>
+                    <tspan
+                      x="50%"
+                      dy="1.5em"
+                      className="text-sm fill-muted-foreground"
+                    >
+                      Active
+                    </tspan>
+                  </text>
+                </RadialBarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Entities by Country Chart */}
+        {entities.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Building2 className="h-5 w-5" />
+                {t("dashboard.entitiesByCountry")}
+              </CardTitle>
+              <CardDescription>
+                {totalEntities} {t("dashboard.entities")} · {countries.size} {t("dashboard.countries")}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={200}>
+                <BarChart
+                  data={Array.from(countries)
+                    .sort()
+                    .map((country) => ({
+                      country,
+                      count: entities.filter((e) => e.rem_country === country).length,
+                    }))}
+                  margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                  <XAxis
+                    dataKey="country"
+                    className="text-xs fill-muted-foreground"
+                    tick={{ fontSize: 12 }}
+                  />
+                  <YAxis
+                    className="text-xs fill-muted-foreground"
+                    tick={{ fontSize: 12 }}
+                  />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "hsl(var(--background))",
+                      border: "1px solid hsl(var(--border))",
+                      borderRadius: "6px",
+                    }}
+                  />
+                  <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                    {Array.from(countries)
+                      .sort()
+                      .map((_, index) => {
+                        const colors = [
+                          "#3b82f6",
+                          "#10b981",
+                          "#8b5cf6",
+                          "#f59e0b",
+                          "#ec4899",
+                          "#14b8a6",
+                          "#6366f1",
+                          "#ef4444",
+                          "#eab308",
+                          "#06b6d4",
+                        ];
+                        return (
+                          <Cell
+                            key={`cell-${index}`}
+                            fill={colors[index % colors.length]}
+                          />
+                        );
+                      })}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        )}
+      </div>
 
       {/* Empty State */}
       {!isAnyLoading && entities.length === 0 && (
