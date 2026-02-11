@@ -1,0 +1,1524 @@
+{
+  "common": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "actions": "Actions",
+    "status": "Status",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "language": "Language",
+    "active": "Active",
+    "inactive": "Inactive",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "entities": "Entities",
+    "periods": "Periods",
+    "dataEntry": "Data Entry",
+    "submissions": "Reporting Status",
+    "icMatching": "IC Matching",
+    "consolidation": "Consolidation",
+    "reports": "Reports",
+    "workflow": "Workflow",
+    "documents": "Documents",
+    "notifications": "Notifications",
+    "admin": "Administration"
+  },
+  "navGroups": {
+    "overview": "Overview",
+    "masterData": "Master Data",
+    "data": "Data",
+    "workflow": "Workflow",
+    "reporting": "Reporting",
+    "system": "System",
+    "rollover": "Rollover",
+    "icRelationships": "IC Relationships",
+    "validationChecklist": "Validation Checklist",
+    "seedData": "Seed Data"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Consolidation — Overview",
+    "subtitleWithPeriod": "Consolidation {{period}} — Overview",
+    "entities": "Entities",
+    "activeEntities": "Active Entities",
+    "countries": "Countries",
+    "foreignCurrency": "Foreign Currency",
+    "periods": "Periods",
+    "submissions": "Submissions",
+    "icBalances": "IC Balances",
+    "recentActivity": "Recent Activity",
+    "quickStats": "Quick Statistics",
+    "activePeriod": "Active Period",
+    "periodName": "Name:",
+    "periodRange": "Range:",
+    "periodStatus": "Status:",
+    "totalPeriods": "Total Periods",
+    "active": "active",
+    "globalPresence": "global presence",
+    "ofTotal": "of total",
+    "allPeriods": "All Periods",
+    "periodsInSystem": "{{count}} period in system",
+    "periodsInSystem_plural": "{{count}} periods in system",
+    "entitiesByCountry": "Entities by Country",
+    "entitiesDistribution": "Distribution of {{total}} entities across {{countries}} countries",
+    "entityCount": "{{count}} entity",
+    "entityCount_plural": "{{count}} entities",
+    "noData": "No data available",
+    "noDataDescription": "Please use the \"Seed Data\" function to create test data.",
+    "loadError": "Dashboard data could not be loaded. Please try again.",
+    "statusOpen": "Open",
+    "statusInProgress": "In Progress",
+    "statusClosed": "Closed",
+    "statusLocked": "Locked"
+  },
+  "entities": {
+    "title": "Entities",
+    "description": "Management of all group entities (Entity Registry)",
+    "addEntity": "Add Entity",
+    "editEntity": "Edit Entity",
+    "deleteEntity": "Delete Entity",
+    "newEntity": "New Entity",
+    "createEntity": "Create New Entity",
+    "createEntityDescription": "Enter the master data for the new entity.",
+    "entityName": "Entity Name",
+    "entityCode": "Code",
+    "entityId": "Entity ID",
+    "entityIdPlaceholder": "e.g. 030533",
+    "entityNamePlaceholder": "Company name",
+    "country": "Country",
+    "countryPlaceholder": "DE",
+    "currency": "Currency",
+    "currencyPlaceholder": "EUR",
+    "legalForm": "Legal Form",
+    "gaapStandard": "Accounting Standard",
+    "gaap": "GAAP",
+    "gaapHGB": "HGB",
+    "gaapIFRS": "IFRS",
+    "gaapLocalGAAP": "Local GAAP",
+    "consolidationScope": "Consolidation Scope",
+    "fiscalYearEnd": "Fiscal Year End",
+    "parentEntity": "Parent Entity",
+    "isActive": "Active",
+    "creating": "Creating...",
+    "createButton": "Create Entity",
+    "total": "Total",
+    "searchPlaceholder": "Search by name or Entity ID...",
+    "all": "All",
+    "entitiesList": "Entities",
+    "noEntitiesFound": "No entities found.",
+    "loadError": "Entities could not be loaded."
+  },
+  "periods": {
+    "title": "Periods",
+    "subtitle": "Management of Reporting Periods and Close Calendar",
+    "addPeriod": "Add Period",
+    "newPeriod": "New Period",
+    "newReportingPeriod": "New Reporting Period",
+    "newReportingPeriodDesc": "Create a new reporting period with start and end date.",
+    "editPeriod": "Edit Period",
+    "deletePeriod": "Delete Period",
+    "periodName": "Period Name",
+    "periodId": "Period ID",
+    "periodIdPlaceholder": "e.g. FY2025",
+    "periodLabel": "Label",
+    "periodLabelPlaceholder": "e.g. Fiscal Year 2025",
+    "year": "Year",
+    "quarter": "Quarter",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "status": "Status",
+    "milestones": "Milestones",
+    "comparisonPeriod": "Comparison Period",
+    "comparisonPeriodSelect": "Select comparison period...",
+    "noComparisonPeriod": "None",
+    "hasComparisonPeriod": "Available",
+    "activePeriod": "Active Period",
+    "periodStatus": "Period Status",
+    "nextDeadline": "Next Deadline",
+    "noNextDeadline": "No upcoming deadline",
+    "daysRemaining": "{{count}} day",
+    "daysRemaining_plural": "{{count}} days",
+    "overdue": "Overdue",
+    "period": "Period",
+    "timeRange": "Time Range",
+    "back": "Back",
+    "creating": "Creating...",
+    "createPeriod": "Create Period",
+    "noPeriodsAvailable": "No reporting periods available.",
+    "loadError": "Reporting periods could not be loaded.",
+    "noActivePeriodSet": "No active reporting period set. Please mark a period as active.",
+    "statusOpen": "Open",
+    "statusInProgress": "In Progress",
+    "statusClosed": "Closed",
+    "statusLocked": "Locked",
+    "setActive": "Set as Active",
+    "lockPeriod": "Lock Period",
+    "advanceStatus": "Status → {{status}}",
+    "changeStatusConfirm": "Change status to \"{{status}}\"?",
+    "changeStatusDesc": "The status will be changed from \"{{from}}\" to \"{{to}}\".",
+    "lockPeriodConfirm": "A locked period cannot be edited anymore. All data will be set to read-only.",
+    "rollover": "Adopt Carryforwards (Rollover)",
+    "closeCalendar": "Close Calendar",
+    "closeCalendarDesc": "Milestones and deadlines for this reporting period",
+    "noMilestonesDefined": "No milestones defined.",
+    "newMilestone": "New Milestone",
+    "addMilestone": "Milestone",
+    "milestoneName": "Name",
+    "milestoneNamePlaceholder": "e.g. Trial Balance Upload Deadline",
+    "deadline": "Deadline",
+    "type": "Type",
+    "reminderDaysBefore": "Reminder (days before)",
+    "adding": "Adding...",
+    "milestoneTypeUpload": "Upload",
+    "milestoneTypeValidation": "Validation",
+    "milestoneTypeReview": "Review",
+    "milestoneTypeApproval": "Approval"
+  },
+  "users": {
+    "title": "Users",
+    "addUser": "Add User",
+    "editUser": "Edit User",
+    "deleteUser": "Delete User",
+    "userName": "User Name",
+    "email": "Email",
+    "role": "Role",
+    "language": "Language",
+    "entraId": "Entra ID (Object ID)",
+    "entraIdOptional": "Optional - automatically filled on first login",
+    "lastLogin": "Last Login",
+    "isActive": "Active"
+  },
+  "roles": {
+    "admin": "Administrator",
+    "groupController": "Group Controller",
+    "localFinance": "Local Finance",
+    "auditor": "Auditor",
+    "viewer": "Viewer"
+  },
+  "permissions": {
+    "accessDenied": "Access Denied",
+    "adminOnly": "This page is only accessible to administrators."
+  },
+  "messages": {
+    "saveSuccess": "Successfully saved",
+    "saveError": "Error saving",
+    "deleteConfirm": "Are you sure you want to delete this item?",
+    "deleteSuccess": "Successfully deleted",
+    "deleteError": "Error deleting",
+    "saving": "Saving..."
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your account and notification settings",
+    "userProfile": "User Profile",
+    "userProfileDesc": "Your personal information",
+    "notifications": "Notifications",
+    "notificationsDesc": "Configure how you want to be notified",
+    "emailSettings": "Email Settings",
+    "emailSettingsDesc": "Manage your email preferences",
+    "appearance": "Appearance",
+    "appearanceDesc": "Customize the appearance of the application",
+    "security": "Security & Privacy",
+    "securityDesc": "Your security and privacy settings",
+    "userId": "User ID",
+    "preferredLanguage": "Preferred Language",
+    "notSet": "Not set",
+    "notAvailable": "Not available",
+    "notInSystem": "Not in system",
+    "deadlineReminders": "Deadline Reminders",
+    "deadlineRemindersDesc": "Email for upcoming deadlines",
+    "submissionUpdates": "Submission Updates",
+    "submissionUpdatesDesc": "Notification for status changes",
+    "icDifferences": "IC Differences",
+    "icDifferencesDesc": "Warning for IC discrepancies",
+    "workflowStatus": "Workflow Status",
+    "workflowStatusDesc": "Updates on approvals",
+    "dailySummary": "Daily Summary",
+    "dailySummaryDesc": "Daily overview report",
+    "reminderLeadTime": "Reminder Lead Time",
+    "reminderLeadTimeDesc": "Days before deadline for reminders",
+    "days": "days",
+    "darkMode": "Dark Mode",
+    "darkModeDesc": "Use dark color scheme",
+    "language": "Language",
+    "languageDesc": "Display language of the interface",
+    "selectLanguage": "Select language",
+    "activityLog": "Activity Log",
+    "activityLogDesc": "All your actions are audited and logged",
+    "viewLog": "View Log",
+    "activeSessions": "Active Sessions",
+    "activeSessionsDesc": "Manage your logged-in devices",
+    "manageSessions": "Manage Sessions",
+    "adminAccess": "Admin Access",
+    "adminAccessDesc": "You are not yet an administrator. Click here to give yourself admin rights.",
+    "setAsAdmin": "Set as Admin",
+    "updating": "Updating...",
+    "reset": "Reset",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "appearanceChanged": "Appearance Changed",
+    "darkModeActivated": "Dark mode activated",
+    "lightModeActivated": "Light mode activated",
+    "languageChanged": "Language Changed",
+    "languageChangedDesc": "The display language has been changed to",
+    "userNotFound": "User not found",
+    "cannotUpdateLanguage": "Language could not be changed",
+    "saved": "Saved",
+    "settingsSavedDesc": "Your settings have been saved successfully",
+    "cannotSaveSettings": "Settings could not be saved",
+    "adminPromotionSuccess": "Successfully promoted",
+    "adminPromotionSuccessDesc": "You have been promoted to administrator",
+    "cannotUpdateRole": "Role could not be updated"
+  },
+  "admin": {
+    "title": "Administration",
+    "description": "Users, chart of accounts, exchange rates and system settings",
+    "tabs": {
+      "users": "Users",
+      "rates": "Exchange Rates",
+      "coa": "Chart of Accounts",
+      "validation": "Validation Rules",
+      "settings": "Settings",
+      "audit": "Audit Log"
+    },
+    "users": {
+      "noPermission": "You do not have permission for this function. Only administrators can manage users.",
+      "createUser": "Create User",
+      "searchPlaceholder": "Search users...",
+      "noUsersFound": "No users found",
+      "userFormDesc": "Enter the user data.",
+      "nameField": "Name *",
+      "namePlaceholder": "John Doe",
+      "emailField": "Email *",
+      "emailPlaceholder": "john.doe@example.com",
+      "entraIdPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "roleField": "Role *",
+      "languageField": "Language *",
+      "userIsActive": "User is active",
+      "requiredFields": "Please fill in all required fields",
+      "userUpdated": "User updated",
+      "userUpdatedDesc": "The changes have been saved successfully.",
+      "userCreated": "User created",
+      "userCreatedDesc": "The new user has been created successfully.",
+      "userSaveError": "The user could not be saved.",
+      "deleteConfirm": "Really delete user \"{{userName}}\"?",
+      "userDeleted": "User deleted",
+      "userDeletedDesc": "The user has been removed successfully.",
+      "userDeleteError": "The user could not be deleted."
+    },
+    "validation": {
+      "noPermission": "You do not have permission for this function. Only administrators can manage validation rules.",
+      "title": "Validation Rules ({{count}} rules)",
+      "description": "Define validation rules for the submit-gate process",
+      "createRule": "Create Rule",
+      "searchPlaceholder": "Search rules (ID or name)...",
+      "noRulesFound": "No rules found",
+      "noRulesYet": "No validation rules created yet.",
+      "ruleId": "Rule ID",
+      "designation": "Name",
+      "category": "Category",
+      "severity": "Severity",
+      "version": "Version",
+      "editRule": "Edit Validation Rule",
+      "newRule": "New Validation Rule",
+      "editRuleDesc": "Update rule \"{{ruleId}}\"",
+      "newRuleDesc": "Create a new validation rule for the submit-gate process",
+      "ruleIdField": "Rule ID *",
+      "ruleIdPlaceholder": "e.g. BAL-001",
+      "nameDE": "Name (German) *",
+      "nameDEPlaceholder": "e.g. Trial balance reconciliation",
+      "nameEN": "Name (English)",
+      "nameENPlaceholder": "e.g. Trial Balance Totals",
+      "threshold": "Threshold (optional)",
+      "thresholdPlaceholder": "e.g. 0.01",
+      "expression": "Rule Expression (optional)",
+      "expressionPlaceholder": "e.g. SUM(Debit) - SUM(Credit) == 0",
+      "formulaDesc": "Formula Description (optional)",
+      "formulaDescPlaceholder": "Description of the validation logic",
+      "errorTemplate": "Error Template (optional)",
+      "errorTemplatePlaceholder": "e.g. Difference of {delta} EUR detected",
+      "ruleIsActive": "Rule is active",
+      "requiredFields": "Rule ID and name (DE) are required fields",
+      "ruleUpdated": "Rule updated",
+      "ruleUpdatedDesc": "The validation rule has been updated successfully.",
+      "ruleCreated": "Rule created",
+      "ruleCreatedDesc": "The new validation rule has been created successfully.",
+      "ruleSaveError": "The rule could not be saved.",
+      "rulePublished": "Rule published",
+      "rulePublishedDesc": "Rule \"{{ruleId}}\" is now active.",
+      "rulePublishError": "The rule could not be published.",
+      "ruleDisabled": "Rule disabled",
+      "ruleDisabledDesc": "Rule \"{{ruleId}}\" has been disabled.",
+      "ruleDisableError": "The rule could not be disabled.",
+      "deleteConfirm": "Really delete rule \"{{ruleName}}\"?",
+      "ruleDeleted": "Rule deleted",
+      "ruleDeletedDesc": "The validation rule has been removed successfully.",
+      "ruleDeleteError": "The rule could not be deleted.",
+      "categoryBalance": "Balance",
+      "categoryCompleteness": "Completeness",
+      "categoryPlausibility": "Plausibility",
+      "categoryCrossSchedule": "Cross-Schedule",
+      "statusDraft": "Draft",
+      "statusActive": "Active",
+      "statusDisabled": "Disabled",
+      "severityInfo": "Info",
+      "severityWarning": "Warning",
+      "severityError": "Error"
+    },
+    "coa": {
+      "noPermission": "You do not have permission for this function. Only administrators can manage the chart of accounts.",
+      "title": "Chart of Accounts ({{count}} accounts)",
+      "description": "REMONDIS Group chart of accounts — HGB-based with IC suffix",
+      "excelImportPlanned": "Excel import will be implemented soon",
+      "excelImport": "Excel Import",
+      "createAccount": "Create Account",
+      "searchPlaceholder": "Search accounts (number or name)...",
+      "noAccountsFound": "No accounts found",
+      "noAccountsYet": "No accounts loaded. Chart of accounts can be imported via Excel.",
+      "accountNumber": "Account No.",
+      "designationDE": "Name (DE)",
+      "balanceGroup": "Balance Group",
+      "ic": "IC",
+      "type": "Type",
+      "sumAccount": "Sum",
+      "account": "Account",
+      "showing100": "Showing first 100 of {{count}} accounts",
+      "editAccount": "Edit Account",
+      "newAccount": "Create New Account",
+      "accountFormDesc": "Enter the account data. All fields marked with * are required.",
+      "accountNumberField": "Account Number *",
+      "accountNumberPlaceholder": "e.g. 1000",
+      "balanceGroupField": "Balance Group *",
+      "balanceGroupPlaceholder": "e.g. A1",
+      "nameDEField": "Name (German) *",
+      "nameDEPlaceholder": "e.g. Cash",
+      "nameENField": "Name (English)",
+      "nameENPlaceholder": "e.g. Cash",
+      "parentAccount": "Parent Account",
+      "parentAccountPlaceholder": "e.g. 1000 (optional)",
+      "icAccount": "IC Account",
+      "requiredFields": "Please fill in all required fields",
+      "accountUpdated": "Account updated",
+      "accountUpdatedDesc": "The changes have been saved successfully.",
+      "accountCreated": "Account created",
+      "accountCreatedDesc": "The new account has been created successfully.",
+      "accountSaveError": "The account could not be saved.",
+      "deleteConfirm": "Really delete account \"{{accountName}}\"?",
+      "accountDeleted": "Account deleted",
+      "accountDeletedDesc": "The account has been removed successfully.",
+      "accountDeleteError": "The account could not be deleted."
+    },
+    "rates": {
+      "selectPeriod": "Select period",
+      "importing": "Importing...",
+      "importRates": "Import Rates",
+      "title": "Exchange Rates",
+      "description": "Spot rate (Dec 31) and average rate",
+      "noRatesForPeriod": "No exchange rates available for this period.",
+      "currency": "Currency",
+      "spotRate": "Spot Rate",
+      "averageRate": "Average Rate",
+      "selectPeriodAndFile": "Please select a period and a file.",
+      "excelNoData": "The Excel file contains no data.",
+      "importCompleted": "Import completed",
+      "importCompletedDesc": "{{imported}} rates imported, {{updated}} updated{{errors, select, 0{} other{, {{errors}} errors}}}.",
+      "importError": "Error importing exchange rates."
+    },
+    "settings": {
+      "title": "System Settings",
+      "noSettings": "No system settings available.",
+      "creating": "Creating...",
+      "createInitial": "Create Initial Settings",
+      "key": "Key",
+      "value": "Value",
+      "updated": "Updated",
+      "userNotFound": "User not found",
+      "settingsInitialized": "{{count}} system settings have been initialized.",
+      "settingsInitError": "System settings could not be created."
+    },
+    "audit": {
+      "searchPlaceholder": "Action or description...",
+      "eventType": "Event Type",
+      "all": "All",
+      "from": "From",
+      "to": "To",
+      "pdfExport": "PDF Export",
+      "excelExport": "Excel Export",
+      "title": "Audit Log ({{count}} entries)",
+      "description": "Complete logging of all changes and actions in the system",
+      "noEntries": "No audit log entries found.",
+      "timestamp": "Timestamp",
+      "type": "Type",
+      "entity": "Entity",
+      "action": "Action",
+      "oldValue": "Old Value",
+      "newValue": "New Value",
+      "typeDataChange": "Data Change",
+      "typeWorkflow": "Workflow",
+      "typeConsolidation": "Consolidation",
+      "typeSystem": "System"
+    },
+    "documents": {
+      "title": "Document Attachments",
+      "uploadDocument": "Upload Document",
+      "description": "Audit reports, confirmations and other documents",
+      "noDocuments": "No documents available.",
+      "entity": "Entity",
+      "category": "Category",
+      "filename": "Filename",
+      "date": "Date",
+      "categoryAuditReport": "Audit Report",
+      "categoryConfirmation": "Confirmation",
+      "categoryExcelUpload": "Excel Upload",
+      "categoryOther": "Other"
+    }
+  },
+  "dataEntry": {
+    "title": "Data Entry",
+    "subtitle": "Enter Trial Balance and Financial Schedules",
+    "filters": {
+      "entity": "Entity",
+      "selectEntity": "Select entity...",
+      "period": "Period"
+    },
+    "progress": {
+      "label": "Progress",
+      "submitted": "submitted",
+      "inProgress": "in progress",
+      "open": "open"
+    },
+    "status": {
+      "empty": "Open",
+      "draft": "Draft",
+      "submitted": "Submitted"
+    },
+    "validation": {
+      "submitAllowed": "Submit allowed — All validations passed",
+      "submitBlocked": "Submit blocked — Validations must pass",
+      "rulesPassed": "rules passed",
+      "openChecklist": "Open Checklist"
+    },
+    "buttons": {
+      "saveDraft": "Save Draft",
+      "saving": "Saving...",
+      "submit": "Submit",
+      "submitting": "Submitting..."
+    },
+    "messages": {
+      "missingData": "Required data missing",
+      "draftSaved": "Draft Saved",
+      "draftSavedDesc": "Your changes have been saved as a draft.",
+      "draftSaveError": "Draft could not be saved.",
+      "submitSuccess": "Successfully Submitted",
+      "submitSuccessDesc": "The schedule has been submitted for review.",
+      "submitError": "Schedule could not be submitted.",
+      "validationRequired": "Submit not possible: {{count}} validation rules must pass. Check the validation checklist."
+    },
+    "errors": {
+      "noActivePeriod": "No active reporting period found. Please configure an active period in settings.",
+      "noActiveEntities": "No active entities available. Please create an entity.",
+      "icBalancesLoadError": "IC balances could not be loaded.",
+      "scheduleLoadError": "{{schedule}} could not be loaded.",
+      "liabilitiesLoadError": "Liabilities schedule could not be loaded.",
+      "checklistLoadError": "Checklist could not be loaded."
+    },
+    "icCategories": {
+      "lul": "A/R & A/P",
+      "loans": "Loans",
+      "cashpool": "Cashpool",
+      "other": "Other",
+      "revenue": "Revenue",
+      "expenses": "Expenses"
+    },
+    "scheduleNames": {
+      "trialBalance": {
+        "label": "Trial Balance",
+        "short": "TB"
+      },
+      "bilanz": {
+        "label": "Balance Sheet (auto)",
+        "short": "BS"
+      },
+      "guv": {
+        "label": "P&L (auto)",
+        "short": "P&L"
+      },
+      "icBalances": {
+        "label": "IC Account Balances",
+        "short": "IC Balances"
+      },
+      "fixedAssets": {
+        "label": "Fixed Assets Movement",
+        "short": "FA"
+      },
+      "financialInv": {
+        "label": "Financial Investments",
+        "short": "Fin. Inv."
+      },
+      "equity": {
+        "label": "Equity Movement",
+        "short": "Equity"
+      },
+      "retainedEarnings": {
+        "label": "Retained Earnings Adjustment",
+        "short": "Ret. Earn."
+      },
+      "provisions": {
+        "label": "Provisions Movement",
+        "short": "Provisions"
+      },
+      "pensions": {
+        "label": "Pension Provisions Difference",
+        "short": "Pensions"
+      },
+      "liabilities": {
+        "label": "Liabilities Schedule",
+        "short": "Liabilities"
+      },
+      "bankLoans": {
+        "label": "Bank Loans Development",
+        "short": "Loans"
+      },
+      "secured": {
+        "label": "Secured Liabilities",
+        "short": "Secured"
+      },
+      "offBalance": {
+        "label": "Off-Balance Sheet Items",
+        "short": "Off-BS"
+      },
+      "relatedParty": {
+        "label": "Related Party Transactions",
+        "short": "RPT"
+      },
+      "contingent": {
+        "label": "Contingent Liabilities",
+        "short": "Contingent"
+      },
+      "auditorFees": {
+        "label": "Auditor & Tax Advisor Fees",
+        "short": "Auditor Fees"
+      },
+      "extraordinary": {
+        "label": "Extraordinary Items",
+        "short": "Extraord."
+      },
+      "icProfit": {
+        "label": "Intercompany Profit",
+        "short": "IC Profit"
+      },
+      "checklist": {
+        "label": "Checklist",
+        "short": "Checklist"
+      }
+    },
+    "schedules": {
+      "loading": "Loading schedule...",
+      "autoGenerated": {
+        "badge": "Auto-generated",
+        "message": "This report is automatically generated from the trial balance. No manual input required."
+      },
+      "bilanz": {
+        "title": "Balance Sheet",
+        "description": "Automatically generated from trial balance — Assets and liabilities"
+      },
+      "guv": {
+        "title": "Profit & Loss Statement",
+        "description": "Automatically generated from trial balance — P&L by nature of expense"
+      },
+      "icBalances": {
+        "title": "IC Account Balances by Partner",
+        "description": "Intercompany balances by IC account type",
+        "partner": "IC Partner",
+        "total": "Total",
+        "sum": "Sum",
+        "addPartner": "Add partner..."
+      },
+      "movement": {
+        "category": "Category",
+        "opening": "Opening Balance",
+        "additions": "Additions",
+        "disposals": "Disposals",
+        "transfers": "Transfers",
+        "closing": "Closing Balance",
+        "sum": "Sum",
+        "noEntries": "No entries available. Please add line items."
+      },
+      "fixedAssets": {
+        "title": "Fixed Assets Movement",
+        "description": "Fixed assets schedule: Gross values and accumulated depreciation by asset class"
+      },
+      "equity": {
+        "title": "Equity Movement",
+        "description": "Equity schedule with changes by equity component"
+      },
+      "provisions": {
+        "title": "Provisions Movement",
+        "description": "Provisions schedule: Opening balance, additions, releases, utilization, closing balance"
+      },
+      "liabilities": {
+        "title": "Liabilities Schedule",
+        "description": "Breakdown by remaining maturity",
+        "category": "Category",
+        "lt1year": "< 1 year",
+        "y1to5": "1–5 years",
+        "gt5years": "> 5 years",
+        "total": "Total",
+        "sum": "Sum",
+        "noEntries": "No entries available."
+      },
+      "generic": {
+        "position": "Line Item",
+        "noEntries": "No entries available."
+      },
+      "financialInv": {
+        "title": "Financial Investments",
+        "description": "Details of shareholdings and loans",
+        "bookValue": "Book Value",
+        "sharePercent": "Share %"
+      },
+      "retainedEarnings": {
+        "title": "Retained Earnings Adjustment",
+        "description": "Reconciliation of retained earnings",
+        "amount": "Amount"
+      },
+      "pensions": {
+        "title": "Pension Provisions Difference",
+        "description": "Pension provisions delta",
+        "priorYear": "Prior Year",
+        "currentYear": "Current Year",
+        "difference": "Difference"
+      },
+      "bankLoans": {
+        "title": "Bank Loans Development",
+        "description": "Bank loan development during the reporting period",
+        "opening": "Opening Balance",
+        "drawdown": "Drawdown",
+        "repayment": "Repayment",
+        "closing": "Closing Balance"
+      },
+      "secured": {
+        "title": "Secured Liabilities",
+        "description": "Liabilities secured by liens or similar rights",
+        "bookValue": "Liability Book Value",
+        "collateral": "Collateral"
+      },
+      "offBalance": {
+        "title": "Off-Balance Sheet Items",
+        "description": "Off-Balance Sheet Items: Leasing, Factoring, ABS",
+        "nominalValue": "Nominal Value"
+      },
+      "relatedParty": {
+        "title": "Related Party Transactions",
+        "description": "Related Party Transactions per statutory requirements",
+        "revenue": "Revenue",
+        "receivables": "Receivables",
+        "payables": "Payables"
+      },
+      "contingent": {
+        "title": "Contingent Liabilities",
+        "description": "Contingent Liabilities per statutory requirements",
+        "amount": "Amount"
+      },
+      "auditorFees": {
+        "title": "Auditor & Tax Advisor Fees",
+        "description": "Breakdown of audit and advisory fees",
+        "priorYear": "Prior Year",
+        "currentYear": "Current Year"
+      },
+      "extraordinary": {
+        "title": "Extraordinary Items",
+        "description": "Extraordinary and non-recurring income/expenses",
+        "income": "Income",
+        "expenses": "Expenses"
+      },
+      "icProfit": {
+        "title": "Intercompany Profit",
+        "description": "Intercompany profits to be eliminated in consolidation",
+        "priorYear": "Prior Year",
+        "currentYear": "Current Year"
+      },
+      "checklist": {
+        "title": "Closing Checklist",
+        "description": "Check all items before submission",
+        "completed": "completed",
+        "commentPlaceholder": "Comment (optional)...",
+        "noItems": "No checklist items available."
+      }
+    }
+  },
+  "icRelationships": {
+    "title": "IC Relationships",
+    "subtitle": "Intercompany Relationship Mapping",
+    "loadError": "IC relationships could not be loaded.",
+    "types": {
+      "lul": "A/R & A/P",
+      "loans": "Loans",
+      "cashpool": "Cashpool",
+      "other": "Other",
+      "revenue": "Revenue",
+      "expenses": "Expenses",
+      "shareholder": "Shareholder",
+      "participation": "Participation"
+    },
+    "dialog": {
+      "addNew": "New IC Relationship",
+      "title": "Create IC Relationship",
+      "description": "Define a new IC relationship between two entities.",
+      "entityA": "Entity A",
+      "entityB": "Entity B",
+      "selectEntityA": "Select Entity A...",
+      "selectEntityB": "Select Entity B...",
+      "icTypes": "IC Types",
+      "creating": "Creating...",
+      "create": "Create"
+    },
+    "matrix": {
+      "title": "IC Matrix",
+      "entitiesCount": "{{count}} entity with IC relationships",
+      "entitiesCount_plural": "{{count}} entities with IC relationships"
+    },
+    "list": {
+      "title": "IC Relationships",
+      "activeCount": "{{count}} active relationship",
+      "activeCount_plural": "{{count}} active relationships",
+      "searchPlaceholder": "Search by entity...",
+      "allTypes": "All Types",
+      "entityA": "Entity A",
+      "entityB": "Entity B",
+      "icTypes": "IC Types",
+      "noRelationships": "No IC relationships found."
+    },
+    "stats": {
+      "activeRelationships": "Active Relationships",
+      "involvedEntities": "Involved Entities",
+      "typesUsed": "IC Types Used"
+    },
+    "tabs": {
+      "matrix": "Matrix",
+      "list": "List"
+    }
+  },
+  "workflow": {
+    "title": "Approval Workflow",
+    "subtitle": "Review & Approval — Multi-stage approval process",
+    "loadError": "Workflow data could not be loaded.",
+    "stages": {
+      "localSubmit": "Local Submit",
+      "controllerReview": "Controller Review",
+      "auditorReview": "Auditor Review",
+      "finalClose": "Final Close"
+    },
+    "actions": {
+      "submitted": "Submitted",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "finding": "Finding",
+      "signedOff": "Signed Off",
+      "reOpened": "Re-Opened"
+    },
+    "submissionStatus": {
+      "submitted": "submitted",
+      "approved": "approved",
+      "rejected": "rejected",
+      "draft": "draft",
+      "underReview": "under review",
+      "notStarted": "open"
+    },
+    "tabs": {
+      "myQueue": "My Queue",
+      "approvalHistory": "Approval History"
+    },
+    "filters": {
+      "searchPlaceholder": "Search by name or Entity ID...",
+      "stage": "Stage",
+      "allStages": "All Stages",
+      "country": "Country",
+      "allCountries": "All Countries"
+    },
+    "queue": {
+      "title": "Review Queue ({{count}})",
+      "description": "Packages awaiting your review",
+      "itemsSelected": "{{count}} selected",
+      "batchApprove": "Batch Approve",
+      "approvingBatch": "Approving...",
+      "entity": "Entity",
+      "stage": "Stage",
+      "lastActionBy": "Last Action By",
+      "date": "Date",
+      "daysOpen": "Days Open",
+      "viewDetail": "View details",
+      "approve": "Approve",
+      "reject": "Reject",
+      "noEntries": "No entries in the queue."
+    },
+    "history": {
+      "title": "Approval History ({{count}})",
+      "searchPlaceholder": "Search by entity...",
+      "stage": "Stage",
+      "action": "Action",
+      "allActions": "All Actions",
+      "dateFrom": "From (YYYY-MM-DD)",
+      "dateTo": "To (YYYY-MM-DD)",
+      "entity": "Entity",
+      "performedBy": "Performed By",
+      "timestamp": "Timestamp",
+      "comment": "Comment",
+      "noEntries": "No approval entries found."
+    },
+    "detail": {
+      "workflowStatus": "Workflow Status",
+      "submittedSchedules": "Submitted Schedules",
+      "noSchedules": "No schedules available.",
+      "commentsHistory": "Comments & History",
+      "noEntries": "No entries available.",
+      "addCommentPlaceholder": "Add comment...",
+      "approve": "Approve",
+      "reject": "Reject",
+      "reOpen": "Re-Open"
+    },
+    "rejectDialog": {
+      "title": "Reject Package",
+      "description": "Please provide a reason for rejection.",
+      "reasonPlaceholder": "Enter rejection reason...",
+      "rejecting": "Rejecting...",
+      "rejectButton": "Reject"
+    },
+    "signatureDialog": {
+      "title": "Digital Confirmation",
+      "description": "Please confirm the approval with your digital signature.",
+      "confirmationText": "I confirm that the data of entity {{entityName}} for period {{period}} is complete and correct.",
+      "user": "User",
+      "role": "Role",
+      "timestamp": "Timestamp",
+      "entity": "Entity",
+      "confirming": "Confirming...",
+      "confirmButton": "Confirm & Approve"
+    },
+    "toast": {
+      "batchApproveSuccess": "Approval Successful",
+      "batchApproveSuccessDesc": "{{count}} package has been approved.",
+      "batchApproveSuccessDesc_plural": "{{count}} packages have been approved.",
+      "batchApproveError": "Batch approval failed. Please try again.",
+      "reOpenSuccess": "Package Re-Opened",
+      "reOpenSuccessDesc": "{{entityName}} has been released for revision.",
+      "reOpenError": "Package could not be re-opened.",
+      "reOpenComment": "Package was reopened for review"
+    }
+  },
+  "reports": {
+    "title": "Reports & Export",
+    "subtitle": "PDF, Excel and XBRL -- Generate and download entity and consolidation reports",
+    "tabs": {
+      "generate": "Generate Report",
+      "downloads": "Download Center",
+      "templates": "Templates"
+    },
+    "errors": {
+      "loadError": "Data could not be loaded. Please try again."
+    },
+    "reportGroups": {
+      "einzelabschluss": "Entity Financial Statements",
+      "konzern": "Group Consolidation"
+    },
+    "reportTypes": {
+      "bilanz": "Balance Sheet",
+      "guv": "Income Statement",
+      "anlagenspiegel": "Fixed Assets Schedule",
+      "eigenkapitalspiegel": "Equity Rollforward",
+      "rueckstellungsspiegel": "Provisions Schedule",
+      "verbindlichkeitenspiegel": "Liabilities Schedule",
+      "icSalden": "IC Balance Confirmation",
+      "prueferReport": "Auditor Report",
+      "reportingPackage": "Reporting Package",
+      "validierungsbericht": "Validation Report",
+      "konzernbilanz": "Consolidated Balance Sheet",
+      "konzernGuv": "Consolidated Income Statement",
+      "konzernAnlagenspiegel": "Consolidated Fixed Assets",
+      "konzernEigenkapitalspiegel": "Consolidated Equity",
+      "icEliminierung": "IC Elimination Report",
+      "konsolidierungsprotokoll": "Consolidation Log"
+    },
+    "categories": {
+      "auditReport": "Audit Report",
+      "confirmation": "Confirmation",
+      "excelUpload": "Excel Upload",
+      "other": "Other"
+    },
+    "generate": {
+      "reportType": "Report Type",
+      "reportTypeDesc": "Select the type of report to generate",
+      "selectReportType": "Select report type...",
+      "scope": "Report Scope",
+      "scopeDesc": "Single entity, batch export or group consolidation",
+      "scopeSingle": "Single Entity",
+      "scopeBatch": "All Entities (ZIP)",
+      "scopeKonzern": "Group",
+      "entity": "Entity",
+      "selectEntity": "Select entity...",
+      "reportingPeriod": "Reporting Period",
+      "comparisonPeriod": "Comparison Period",
+      "outputFormat": "Output Format",
+      "options": "Options",
+      "includePriorYear": "Include prior year comparison",
+      "draftWatermarkActive": "DRAFT Watermark Active",
+      "draftWatermarkActiveDesc": "The selected entity ({{entity}}) has not been approved yet. The report will automatically include a DRAFT watermark.",
+      "draftWatermarkInfo": "DRAFT watermark will be automatically activated if the entity has not been approved.",
+      "language": "Language",
+      "generating": "Generating report...",
+      "generateSuccess": "Report generated successfully! You can find it in the Download Center.",
+      "generateButton": "Generate Report"
+    },
+    "preview": {
+      "title": "Preview",
+      "description": "First page of the report",
+      "annualReport": "Annual Report",
+      "selectReportType": "Select report type",
+      "allEntities": "All Entities",
+      "selectEntity": "Select entity",
+      "reportingPeriod": "Reporting period",
+      "comparison": "Comp.",
+      "german": "German",
+      "english": "English",
+      "priorYearComparison": "Prior Year Comparison"
+    },
+    "downloads": {
+      "loadError": "Documents could not be loaded.",
+      "searchPlaceholder": "Search document or filename...",
+      "category": "Category",
+      "allCategories": "All Categories",
+      "period": "Period",
+      "allPeriods": "All Periods",
+      "selected": "{{count}} selected",
+      "clearSelection": "Clear selection",
+      "downloadZip": "Download as ZIP",
+      "documentName": "Document Name",
+      "entity": "Entity",
+      "format": "Format",
+      "uploadedAt": "Uploaded At",
+      "actions": "Actions",
+      "noDocuments": "No documents found.",
+      "loading": "Loading documents...",
+      "showing": "Showing {{filtered}} of {{total}} documents"
+    },
+    "templates": {
+      "companyLogo": "Company Logo",
+      "logoDesc": "Upload logo for report headers",
+      "currentLogo": "Current Logo",
+      "uploadPrompt": "Drop logo here or click to upload",
+      "uploadHint": "PNG, JPG or SVG, max. 2 MB",
+      "fontSize": "Font Size",
+      "fontSizeDesc": "Default font size for PDF reports",
+      "headerFooter": "Header & Footer",
+      "headerFooterDesc": "Configuration for PDF report headers and footers. Available placeholders: {Periode}, {Datum}, {Seite}, {Gesamt}, {Gesellschaft}",
+      "header": "Header",
+      "footer": "Footer",
+      "left": "Left",
+      "center": "Center",
+      "right": "Right",
+      "headerLeftPlaceholder": "Header left",
+      "headerCenterPlaceholder": "Header center",
+      "headerRightPlaceholder": "Header right",
+      "footerLeftPlaceholder": "Footer left",
+      "footerCenterPlaceholder": "Footer center",
+      "footerRightPlaceholder": "Footer right",
+      "preview": "Preview"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Notification Center",
+    "description": "Notification Center — all notifications and settings",
+    "loadError": "Error loading notifications.",
+    "breakdown": "Breakdown",
+    "unreadCount": "{{count}} Unread",
+    "totalCount": "{{count}} Total",
+    "empty": "No notifications found.",
+    "tabs": {
+      "all": "All Notifications",
+      "settings": "Settings"
+    },
+    "types": {
+      "deadlineReminder": "Deadline",
+      "overdue": "Overdue",
+      "submission": "Submission",
+      "approval": "Approval",
+      "rejection": "Rejection",
+      "icDifference": "IC Difference",
+      "newPeriod": "New Period",
+      "rollover": "Rollover",
+      "validationError": "Validation",
+      "consolidation": "Consolidation",
+      "manualReminder": "Reminder",
+      "other": "Other"
+    },
+    "filters": {
+      "searchPlaceholder": "Search by title, description or Entity ID...",
+      "type": "Type",
+      "allTypes": "All Types",
+      "status": "Status",
+      "all": "All",
+      "unread": "Unread",
+      "read": "Read"
+    },
+    "actions": {
+      "markAllAsRead": "Mark all as read",
+      "markAsRead": "Mark as read",
+      "markAsUnread": "Mark as unread"
+    },
+    "time": {
+      "justNow": "just now",
+      "minutesAgo": "{{count}} min. ago",
+      "hoursAgo": "{{count}} hour ago",
+      "hoursAgo_plural": "{{count}} hours ago",
+      "yesterday": "yesterday",
+      "daysAgo": "{{count}} day ago",
+      "daysAgo_plural": "{{count}} days ago"
+    },
+    "settings": {
+      "title": "Notification Settings",
+      "description": "Configure how and when you want to be notified.",
+      "deadlineReminders": "Deadline Reminders",
+      "deadlineRemindersDesc": "Notifications before upcoming upload deadlines",
+      "reminderLeadTime": "Reminder Lead Time",
+      "reminderLeadTimeDesc": "How many days before the deadline should you be reminded?",
+      "submissionUpdates": "Submission Updates",
+      "submissionUpdatesDesc": "Notifications for new submissions and uploads",
+      "icDifferences": "IC Differences",
+      "icDifferencesDesc": "Notifications for detected intercompany differences",
+      "workflowStatus": "Workflow Status",
+      "workflowStatusDesc": "Notifications for approvals, rejections and status changes",
+      "dailySummary": "Daily Summary",
+      "dailySummaryDesc": "A daily email with an overview of all open tasks",
+      "days": "{{count}} day",
+      "days_plural": "{{count}} days",
+      "channels": {
+        "emailInApp": "Email + In-App",
+        "inAppOnly": "In-App Only",
+        "off": "Off"
+      },
+      "mandatoryNote": "Rejection and Overdue notifications are mandatory and cannot be disabled."
+    }
+  },
+  "reconciliation": {
+    "title": "IC Reconciliation",
+    "subtitle": "Intercompany Reconciliation — Zero Tolerance",
+    "exportReport": "Export IC Report",
+    "status": {
+      "open": "Open",
+      "inClarification": "In Clarification",
+      "resolved": "Resolved",
+      "accepted": "Accepted"
+    },
+    "category": {
+      "lul": "A/R & A/P",
+      "loans": "Loans",
+      "cashpool": "Cashpool",
+      "other": "Other",
+      "revenueExpenses": "Revenue/Expenses"
+    },
+    "summary": {
+      "openDifferences": "Open Differences",
+      "inClarification": "In Clarification",
+      "totalDifference": "Total Difference",
+      "reconciled": "Reconciled",
+      "totalSum": "Total",
+      "icPositions": "{{count}} IC position",
+      "icPositions_plural": "{{count}} IC positions",
+      "ofPositions": "of {{total}} positions ({{percent}}%)"
+    },
+    "tabs": {
+      "matrix": "Matrix",
+      "differencesList": "Differences List"
+    },
+    "matrix": {
+      "entityAB": "Entity A ↓ / B →",
+      "legend": "Legend",
+      "noDifference": "No difference",
+      "lessThan1k": "< 1,000 EUR",
+      "lessThan10k": "< 10,000 EUR",
+      "moreThan10k": "> 10,000 EUR"
+    },
+    "list": {
+      "searchPlaceholder": "Search entity...",
+      "allStatuses": "All Statuses",
+      "allCategories": "All Categories",
+      "category": "Category",
+      "entityA": "Entity A",
+      "entityB": "Entity B",
+      "amountA": "Amount A",
+      "amountB": "Amount B",
+      "difference": "Difference",
+      "noPositionsFound": "No IC positions found.",
+      "showingPositions": "{{filtered}} of {{total}} positions shown"
+    },
+    "detail": {
+      "title": "IC Detail",
+      "description": "Bilateral reconciliation by category",
+      "entityAReports": "Entity A reports (Receivable)",
+      "entityBReports": "Entity B reports (Payable)",
+      "totalDifference": "Total Difference",
+      "breakdownByCategory": "Breakdown by Category",
+      "commentsForClarification": "Comments for Clarification",
+      "noComments": "No comments available.",
+      "newComment": "New Comment",
+      "commentPlaceholder": "Enter clarification comment...",
+      "saving": "Saving...",
+      "sendComment": "Send Comment",
+      "setInClarification": "Set In Clarification",
+      "resolve": "Resolve",
+      "accept": "Accept (GC)"
+    },
+    "errors": {
+      "loadError": "IC reconciliation data could not be loaded.",
+      "noActivePeriod": "No active period found. Please create or activate a period to view IC reconciliations."
+    },
+    "export": {
+      "amountEntityA": "Amount Entity A (EUR)",
+      "amountEntityB": "Amount Entity B (EUR)",
+      "difference": "Difference (EUR)",
+      "commentA": "Comment A",
+      "commentB": "Comment B"
+    }
+  },
+  "rollover": {
+    "title": "Period Rollover",
+    "subtitle": "Carry forward prior year values to new reporting period",
+    "loadError": "Error loading data. Please try again.",
+    "steps": {
+      "selectPeriods": "Select Periods",
+      "selectEntities": "Entities",
+      "execute": "Execute"
+    },
+    "step1": {
+      "title": "Source Period & Target Period",
+      "description": "Select the source period (closed) and the target period (new period).",
+      "sourcePeriod": "Source Period (Prior Year)",
+      "targetPeriod": "Target Period (Reporting Year)",
+      "selectSourcePeriod": "Select source period...",
+      "selectTargetPeriod": "Select target period...",
+      "preview": "Preview",
+      "previewDescription": "Balance sheet closing balances from <strong>{{sourceLabel}}</strong> will be adopted as prior year values / opening balances in <strong>{{targetLabel}}</strong>.",
+      "balanceAccountsRule": "Balance sheet accounts (100000-496000): Closing balance → Opening balance",
+      "plAccountsRule": "P&L accounts (500000-647000): NOT transferred (start at 0)",
+      "retainedEarningsRule": "Retained earnings (321000): Automatic calculation",
+      "schedulesRule": "Fixed assets, provisions, equity schedules: Closing balances adopted"
+    },
+    "step2": {
+      "title": "Select Entities",
+      "selectedCount": "{{selected}} of {{total}} entities selected",
+      "selectAll": "Select All",
+      "deselectAll": "Deselect All",
+      "searchPlaceholder": "Search entity...",
+      "allCountries": "All Countries",
+      "entityId": "Entity ID",
+      "name": "Name",
+      "country": "Country",
+      "currency": "Currency",
+      "status": "Status"
+    },
+    "step3": {
+      "title": "Rollover Summary",
+      "entities": "Entities",
+      "balanceAccounts": "Balance Accounts",
+      "sourcePeriod": "Source Period",
+      "targetPeriod": "Target Period",
+      "categoriesTitle": "The following categories will be transferred:",
+      "category1": "Balance sheet accounts (Closing balances → Opening balances)",
+      "category2": "Fixed assets schedule (Gross values + accumulated depreciation)",
+      "category3": "Provisions schedule (Closing balances)",
+      "category4": "Equity schedule (All equity components)",
+      "category5": "Retained earnings (Automatic calculation)",
+      "startButton": "Start Rollover",
+      "running": "Rollover in progress...",
+      "progressText": "{{percentage}}% — {{current}} of {{total}} entities",
+      "completed": "Rollover Completed",
+      "completedDescription": "{{successCount}} entities successful, {{totalAccounts}} accounts transferred, {{totalWarnings}} warnings",
+      "entity": "Entity",
+      "name": "Name",
+      "accounts": "Accounts",
+      "warnings": "Warnings",
+      "status": "Status"
+    },
+    "status": {
+      "success": "Success",
+      "skipped": "Skipped",
+      "error": "Error"
+    },
+    "navigation": {
+      "back": "Back",
+      "next": "Next",
+      "done": "Done"
+    }
+  },
+  "seed": {
+    "title": "Seed Test Data",
+    "subtitle": "Create test data for development",
+    "card": {
+      "title": "Create Test Data",
+      "description": "This button creates an admin user, a test entity, and a test period."
+    },
+    "button": {
+      "seedData": "Seed Data",
+      "creating": "Creating..."
+    },
+    "log": {
+      "title": "Log",
+      "checkingAdminUser": "Checking for existing admin user...",
+      "adminUserExists": "ℹ️ Admin user already exists, skipping",
+      "creatingAdminUser": "Creating admin user...",
+      "adminUserCreated": "✅ Admin user created",
+      "creatingTestEntity": "Creating test entity...",
+      "testEntityCreated": "✅ Test entity created",
+      "testEntityExists": "ℹ️ Test entity already exists",
+      "entityCreationFailed": "⚠️ Entity creation failed: {{message}}",
+      "creatingTestPeriod": "Creating test period...",
+      "testPeriodCreated": "✅ Test period created",
+      "testPeriodExists": "ℹ️ Test period already exists",
+      "periodCreationFailed": "⚠️ Period creation failed: {{message}}",
+      "seedComplete": "\n🎉 Seed complete!",
+      "error": "\n❌ Error: {{message}}"
+    },
+    "toast": {
+      "successTitle": "Seed Successful",
+      "successDescription": "Test data has been created. Please reload the page.",
+      "errorTitle": "Seed Failed",
+      "errorDescription": "An error occurred while seeding data."
+    }
+  },
+  "consolidation": {
+    "title": "Consolidation",
+    "subtitle": "Consolidation Module — 7-Step Wizard, Results & Elimination Journal",
+    "tabs": {
+      "wizard": "Wizard",
+      "results": "Results",
+      "journal": "Elimination Journal"
+    },
+    "wizard": {
+      "title": "Consolidation Wizard",
+      "description": "Step-by-step execution of group consolidation",
+      "selectPeriod": "Select period...",
+      "current": "current",
+      "prerequisiteCheck": "Prerequisite Check",
+      "step": "Step",
+      "runStep": "Run Step",
+      "runAllSteps": "Run All Steps",
+      "resetStep": "Reset Step",
+      "totalProgress": "Total Progress",
+      "stepsCompleted": "{{completed}}/{{total}} steps completed"
+    },
+    "status": {
+      "completed": "Completed",
+      "running": "Running...",
+      "pending": "Pending"
+    },
+    "prerequisites": {
+      "icDifferences": "IC Differences Resolved",
+      "exchangeRates": "Exchange Rates Available",
+      "activeEntities": "Active Entities",
+      "period": "Consolidation Period",
+      "entries": "{{count}} entry",
+      "entries_plural": "{{count}} entries",
+      "noIcEntries": "No IC entries yet",
+      "eurOnly": "EUR only",
+      "noRates": "No rates available",
+      "entitiesActive": "{{count}} entity active",
+      "entitiesActive_plural": "{{count}} entities active",
+      "noPeriod": "No period selected"
+    },
+    "steps": {
+      "fxTranslation": {
+        "name": "FX Translation (Currency Translation)",
+        "short": "FX Translation",
+        "description": "Currency Translation — Spot rate and average rate method",
+        "noEntities": "No foreign currency entities or exchange rates available."
+      },
+      "summation": {
+        "name": "Summation Balance (HB I)",
+        "short": "Summation",
+        "description": "Summation Balance HB I — Aggregation of all individual financial statements",
+        "total": "Total (HB I)",
+        "beforeConsolidation": "Before consolidation entries ({{count}} entry)",
+        "beforeConsolidation_plural": "Before consolidation entries ({{count}} entries)",
+        "noEntries": "No summation entries available yet.",
+        "totalHB1": "Total HB I"
+      },
+      "icEliminationBS": {
+        "name": "Debt Consolidation (IC Balance Sheet)",
+        "short": "IC BS",
+        "description": "Debt Consolidation — Elimination of intercompany balances (Balance Sheet)",
+        "noEntries": "No IC elimination entries (Balance Sheet) available.",
+        "totalEliminations": "Total IC Eliminations (Balance Sheet)"
+      },
+      "icEliminationPL": {
+        "name": "Revenue & Expense Consolidation (IC P&L)",
+        "short": "IC P&L",
+        "description": "Revenue and Expense Consolidation — Elimination of IC revenue and IC expenses",
+        "noEntries": "No IC elimination entries (P&L) available.",
+        "totalEliminations": "Total IC Eliminations (P&L)"
+      },
+      "icProfitElimination": {
+        "name": "Intercompany Profit Elimination",
+        "short": "IC Profit",
+        "description": "Intercompany Profit Elimination — Elimination of unrealized profits",
+        "noEntries": "No intercompany profit eliminations available.",
+        "totalEliminations": "Total Intercompany Profit Elimination"
+      },
+      "capitalConsolidation": {
+        "name": "Capital Consolidation",
+        "short": "Capital Consol.",
+        "description": "Capital Consolidation — Offsetting investment book value against proportionate equity",
+        "noEntries": "No capital consolidation entries available.",
+        "totalConsolidation": "Total Capital Consolidation"
+      },
+      "groupStatements": {
+        "name": "Group Financial Statements",
+        "short": "Group Statements",
+        "description": "Group Financial Statements — Final review and reconciliation",
+        "balanceCheckPassed": "Balance check passed",
+        "balanceCheckFailed": "Balance check: Difference exists",
+        "balanceTotal": "Balance of all entries",
+        "summary": "Group Financial Statements Summary",
+        "consolidationScope": "Consolidation Scope",
+        "entitiesCount": "{{count}} entity",
+        "entitiesCount_plural": "{{count}} entities",
+        "eliminationEntries": "Elimination Entries",
+        "entriesCount": "{{count}} entry",
+        "entriesCount_plural": "{{count}} entries",
+        "totalICBS": "Total IC Eliminations (Balance Sheet)",
+        "totalICPL": "Total IC Eliminations (P&L)",
+        "totalCapital": "Total Capital Consolidation",
+        "totalICProfit": "Total Intercompany Profit Elimination",
+        "closingEntries": "Closing Entries"
+      }
+    },
+    "table": {
+      "entity": "Entity",
+      "entityA": "Entity A",
+      "entityB": "Entity B",
+      "currency": "Currency",
+      "spotRate": "Spot Rate",
+      "averageRate": "Average Rate",
+      "accountDebit": "Account (Debit)",
+      "accountCredit": "Account (Credit)",
+      "amountEUR": "Amount (EUR)",
+      "description": "Description",
+      "translationEntries": "Translation Entries",
+      "sellingEntity": "Selling Entity",
+      "receivingEntity": "Receiving Entity",
+      "icProfitEUR": "IC Profit (EUR)",
+      "step": "Step"
+    },
+    "results": {
+      "totalEntries": "Total Entries",
+      "consolidationEntries": "Consolidation Entries",
+      "icEliminationsBS": "IC Eliminations (Balance Sheet)",
+      "icEliminationsPL": "IC Eliminations (P&L)",
+      "capitalConsolidation": "Capital Consolidation",
+      "entries": "{{count}} entry",
+      "entries_plural": "{{count}} entries",
+      "entriesByStep": "Consolidation Entries by Step",
+      "period": "Period",
+      "noEntries": "No consolidation entries available for this period yet.",
+      "exchangeRates": "Exchange Rates",
+      "exchangeRatesDescription": "Spot rates and average rates for the selected period",
+      "noExchangeRates": "No exchange rates available for this period."
+    },
+    "journal": {
+      "title": "Elimination Journal",
+      "description": "All consolidation entries with filter and search functionality",
+      "step": "Step",
+      "allSteps": "All Steps",
+      "searchAccount": "Search Account",
+      "accountPlaceholder": "Account number or name...",
+      "searchEntity": "Search Entity",
+      "entityPlaceholder": "Entity name...",
+      "entriesCount": "{{filtered}} of {{total}} entries",
+      "noEntries": "No entries found. Please adjust the filters."
+    },
+    "errors": {
+      "exchangeRatesLoadError": "Exchange rates could not be loaded.",
+      "entriesLoadError": "Consolidation entries could not be loaded."
+    }
+  },
+  "validationChecklist": {
+    "title": "Validation Checklist",
+    "subtitle": "Check all validation rules before submit",
+    "buttons": {
+      "runAll": "Run All Validations",
+      "executing": "Executing..."
+    },
+    "filters": {
+      "entity": "Entity",
+      "selectEntity": "Select entity",
+      "period": "Period",
+      "noActivePeriod": "No active period",
+      "category": "Category",
+      "allCategories": "All Categories"
+    },
+    "gate": {
+      "title": "Submit Gate Status",
+      "submitAllowed": "All validations passed — Submit is allowed",
+      "submitBlocked": "Submit is blocked — Fix the errors",
+      "progress": "Progress: {{passed}} / {{total}} rules passed",
+      "passed": "Passed",
+      "failed": "Failed",
+      "notRun": "Not Run",
+      "error": "Error",
+      "blockingIssues": "Blocking Issues:"
+    },
+    "rules": {
+      "title": "Validation Rules ({{count}} rules)",
+      "noRules": "No active validation rules available."
+    },
+    "table": {
+      "status": "Status",
+      "ruleId": "Rule ID",
+      "name": "Name",
+      "category": "Category",
+      "result": "Result",
+      "lastChecked": "Last Checked",
+      "action": "Action"
+    },
+    "status": {
+      "pass": "Passed",
+      "fail": "Failed",
+      "notRun": "Not Run",
+      "error": "Error"
+    },
+    "category": {
+      "balance": "Balance",
+      "completeness": "Completeness",
+      "plausibility": "Plausibility",
+      "crossSchedule": "Cross-Schedule"
+    },
+    "messages": {
+      "validationsExecuted": "Validations Executed",
+      "rulesChecked": "{{total}} rules checked: {{passed}} passed, {{failed}} failed",
+      "ruleExecuted": "Rule Executed",
+      "ruleChecked": "Rule {{ruleId}} was checked"
+    },
+    "errors": {
+      "missingEntityPeriodUser": "Entity, period or user not found",
+      "validationsExecutionFailed": "Validations could not be executed: {{error}}",
+      "unknownError": "Unknown error",
+      "ruleExecutionFailed": "Rule could not be executed"
+    }
+  }
+}

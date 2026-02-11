@@ -8,6 +8,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
+import { Progress } from "@/components/ui/progress";
 import {
   Building2,
   Calendar,
@@ -15,6 +16,11 @@ import {
   CheckCircle,
   Globe,
   Coins,
+  TrendingUp,
+  TrendingDown,
+  Minus,
+  FileCheck,
+  Clock,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -125,9 +131,9 @@ export function DashboardPage() {
       {/* KPI Cards */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium">
+              <CardDescription className="text-xs font-medium uppercase tracking-wide">
                 {t("dashboard.entities")}
               </CardDescription>
               <Building2 className="h-4 w-4 text-muted-foreground" />
@@ -137,149 +143,221 @@ export function DashboardPage() {
             {isAnyLoading ? (
               <Skeleton className="h-9 w-20" />
             ) : (
-              <div className="text-3xl font-bold">{totalEntities}</div>
+              <div className="space-y-1">
+                <div className="text-3xl font-bold tracking-tight">{totalEntities}</div>
+                <p className="text-xs text-muted-foreground">
+                  {activeEntities} {t("dashboard.active")} ({Math.round((activeEntities / totalEntities) * 100)}%)
+                </p>
+              </div>
             )}
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium">
+              <CardDescription className="text-xs font-medium uppercase tracking-wide">
                 {t("dashboard.activeEntities")}
               </CardDescription>
-              <CheckCircle className="h-4 w-4 text-muted-foreground" />
+              <CheckCircle className="h-4 w-4 text-green-600" />
             </div>
           </CardHeader>
           <CardContent>
             {isAnyLoading ? (
               <Skeleton className="h-9 w-20" />
             ) : (
-              <div className="text-3xl font-bold">{activeEntities}</div>
+              <div className="space-y-2">
+                <div className="text-3xl font-bold tracking-tight">{activeEntities}</div>
+                <Progress
+                  value={(activeEntities / totalEntities) * 100}
+                  className="h-2"
+                />
+              </div>
             )}
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium">
+              <CardDescription className="text-xs font-medium uppercase tracking-wide">
                 {t("dashboard.countries")}
               </CardDescription>
-              <Globe className="h-4 w-4 text-muted-foreground" />
+              <Globe className="h-4 w-4 text-blue-600" />
             </div>
           </CardHeader>
           <CardContent>
             {isAnyLoading ? (
               <Skeleton className="h-9 w-20" />
             ) : (
-              <div className="text-3xl font-bold">{countries.size}</div>
+              <div className="space-y-1">
+                <div className="text-3xl font-bold tracking-tight">{countries.size}</div>
+                <p className="text-xs text-muted-foreground">
+                  {t("dashboard.globalPresence")}
+                </p>
+              </div>
             )}
           </CardContent>
         </Card>
 
         <Card>
-          <CardHeader className="pb-3">
+          <CardHeader className="pb-2">
             <div className="flex items-center justify-between">
-              <CardDescription className="text-xs font-medium">
+              <CardDescription className="text-xs font-medium uppercase tracking-wide">
                 {t("dashboard.foreignCurrency")}
               </CardDescription>
-              <Coins className="h-4 w-4 text-muted-foreground" />
+              <Coins className="h-4 w-4 text-amber-600" />
             </div>
           </CardHeader>
           <CardContent>
             {isAnyLoading ? (
               <Skeleton className="h-9 w-20" />
             ) : (
-              <div className="text-3xl font-bold">{foreignCurrency}</div>
+              <div className="space-y-1">
+                <div className="text-3xl font-bold tracking-tight">{foreignCurrency}</div>
+                <p className="text-xs text-muted-foreground">
+                  {Math.round((foreignCurrency / totalEntities) * 100)}% {t("dashboard.ofTotal")}
+                </p>
+              </div>
             )}
           </CardContent>
         </Card>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        {/* Active Period Info */}
-        {activePeriod && (
+      {/* Period KPIs */}
+      {activePeriod && (
+        <div className="grid gap-4 md:grid-cols-3">
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                {t("dashboard.activePeriod")}
-              </CardTitle>
-              <CardDescription>
-                {activePeriod.rem_label || activePeriod.p3_name}
-              </CardDescription>
+            <CardHeader className="pb-2">
+              <div className="flex items-center justify-between">
+                <CardDescription className="text-xs font-medium uppercase tracking-wide">
+                  {t("dashboard.activePeriod")}
+                </CardDescription>
+                <Calendar className="h-4 w-4 text-purple-600" />
+              </div>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">{t("dashboard.periodName")}</span>
-                <span className="font-medium">{activePeriod.p3_name}</span>
-              </div>
-              <Separator />
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">{t("dashboard.periodRange")}</span>
-                <span className="font-medium">
+            <CardContent>
+              <div className="space-y-1">
+                <div className="text-2xl font-bold tracking-tight">{activePeriod.rem_label || activePeriod.p3_name}</div>
+                <p className="text-xs text-muted-foreground">
                   {dateDe(activePeriod.rem_startdate)} - {dateDe(activePeriod.rem_enddate)}
-                </span>
+                </p>
               </div>
-              <Separator />
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">{t("dashboard.periodStatus")}</span>
-                <Badge variant="outline">
+                <CardDescription className="text-xs font-medium uppercase tracking-wide">
+                  {t("dashboard.periodStatus")}
+                </CardDescription>
+                <FileCheck className="h-4 w-4 text-indigo-600" />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                <Badge
+                  variant="outline"
+                  className={
+                    activePeriod.rem_status === PeriodStatus.Open
+                      ? "border-green-500 text-green-700"
+                      : activePeriod.rem_status === PeriodStatus.InProgress
+                      ? "border-blue-500 text-blue-700"
+                      : activePeriod.rem_status === PeriodStatus.Closed
+                      ? "border-orange-500 text-orange-700"
+                      : "border-red-500 text-red-700"
+                  }
+                >
                   {periodStatusLabel(activePeriod.rem_status, t)}
                 </Badge>
               </div>
             </CardContent>
           </Card>
-        )}
 
-        {/* All Periods */}
-        {periods.length > 0 && (
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                {t("dashboard.allPeriods")}
-              </CardTitle>
-              <CardDescription>
-                {t("dashboard.periodsInSystem", { count: periods.length })}
-              </CardDescription>
+            <CardHeader className="pb-2">
+              <div className="flex items-center justify-between">
+                <CardDescription className="text-xs font-medium uppercase tracking-wide">
+                  {t("dashboard.totalPeriods")}
+                </CardDescription>
+                <Clock className="h-4 w-4 text-slate-600" />
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                {periods.map((period, index) => (
-                  <div key={period.rem_periodid}>
-                    {index > 0 && <Separator />}
-                    <div className="flex items-center justify-between py-2">
-                      <div className="flex-1">
-                        <p className="font-medium">{period.p3_name}</p>
-                        <p className="text-xs text-muted-foreground">
-                          {dateDe(period.rem_startdate)} - {dateDe(period.rem_enddate)}
-                        </p>
-                      </div>
-                      <Badge variant="outline" className="ml-2">
-                        {periodStatusLabel(period.rem_status, t)}
-                      </Badge>
-                    </div>
-                  </div>
-                ))}
+              <div className="space-y-1">
+                <div className="text-3xl font-bold tracking-tight">{periods.length}</div>
+                <p className="text-xs text-muted-foreground">
+                  {periods.filter(p => p.rem_status === PeriodStatus.Open || p.rem_status === PeriodStatus.InProgress).length} {t("dashboard.active")}
+                </p>
               </div>
             </CardContent>
           </Card>
-        )}
-      </div>
+        </div>
+      )}
+
+      {/* All Periods */}
+      {periods.length > 0 && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="flex items-center gap-2">
+                  <Calendar className="h-5 w-5" />
+                  {t("dashboard.allPeriods")}
+                </CardTitle>
+                <CardDescription className="mt-1">
+                  {t("dashboard.periodsInSystem", { count: periods.length })}
+                </CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-0 divide-y">
+              {periods.map((period) => (
+                <div key={period.rem_periodid} className="flex items-center justify-between py-3 first:pt-0 last:pb-0">
+                  <div className="flex-1">
+                    <p className="font-medium">{period.p3_name}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {dateDe(period.rem_startdate)} - {dateDe(period.rem_enddate)}
+                    </p>
+                  </div>
+                  <Badge
+                    variant="outline"
+                    className={
+                      period.rem_status === PeriodStatus.Open
+                        ? "border-green-500 text-green-700"
+                        : period.rem_status === PeriodStatus.InProgress
+                        ? "border-blue-500 text-blue-700"
+                        : period.rem_status === PeriodStatus.Closed
+                        ? "border-orange-500 text-orange-700"
+                        : "border-red-500 text-red-700"
+                    }
+                  >
+                    {periodStatusLabel(period.rem_status, t)}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Entities by Country */}
       {entities.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Building2 className="h-5 w-5" />
-              {t("dashboard.entitiesByCountry")}
-            </CardTitle>
-            <CardDescription>
-              {t("dashboard.entitiesDistribution", { total: totalEntities, countries: countries.size })}
-            </CardDescription>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5" />
+                  {t("dashboard.entitiesByCountry")}
+                </CardTitle>
+                <CardDescription className="mt-1">
+                  {totalEntities} {t("dashboard.entities")} · {countries.size} {t("dashboard.countries")}
+                </CardDescription>
+              </div>
+            </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -289,37 +367,35 @@ export function DashboardPage() {
                   const count = entities.filter((e) => e.rem_country === country).length;
                   const percentage = Math.round((count / totalEntities) * 100);
                   const colors = [
-                    'bg-blue-500',
-                    'bg-green-500',
-                    'bg-purple-500',
-                    'bg-orange-500',
-                    'bg-pink-500',
-                    'bg-teal-500',
-                    'bg-indigo-500',
-                    'bg-red-500',
-                    'bg-yellow-500',
-                    'bg-cyan-500',
+                    'bg-blue-600',
+                    'bg-green-600',
+                    'bg-purple-600',
+                    'bg-orange-600',
+                    'bg-pink-600',
+                    'bg-teal-600',
+                    'bg-indigo-600',
+                    'bg-red-600',
+                    'bg-yellow-600',
+                    'bg-cyan-600',
                   ];
                   const barColor = colors[index % colors.length];
                   return (
                     <div key={country} className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium">{country}</span>
-                          <Badge variant="secondary" className="text-xs">
-                            {t("dashboard.entityCount", { count })}
-                          </Badge>
+                        <div className="flex items-center gap-3">
+                          <span className="font-semibold text-sm uppercase tracking-wide min-w-[3rem]">{country}</span>
+                          <span className="text-2xl font-bold">{count}</span>
                         </div>
-                        <span className="text-sm font-medium text-muted-foreground">
-                          {percentage}%
-                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-semibold tabular-nums">
+                            {percentage}%
+                          </span>
+                        </div>
                       </div>
-                      <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
-                        <div
-                          className={`h-full ${barColor} rounded-full transition-all`}
-                          style={{ width: `${percentage}%` }}
-                        />
-                      </div>
+                      <Progress
+                        value={percentage}
+                        className="h-2"
+                      />
                     </div>
                   );
                 })}

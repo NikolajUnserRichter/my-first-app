@@ -1,0 +1,1524 @@
+{
+  "common": {
+    "add": "Hinzufügen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "search": "Suchen",
+    "filter": "Filtern",
+    "export": "Exportieren",
+    "import": "Importieren",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolgreich",
+    "confirm": "Bestätigen",
+    "actions": "Aktionen",
+    "status": "Status",
+    "name": "Name",
+    "email": "E-Mail",
+    "role": "Rolle",
+    "language": "Sprache",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "yes": "Ja",
+    "no": "Nein"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "entities": "Gesellschaften",
+    "periods": "Perioden",
+    "dataEntry": "Datenerfassung",
+    "submissions": "Reporting Status",
+    "icMatching": "IC-Abstimmung",
+    "consolidation": "Konsolidierung",
+    "reports": "Berichte",
+    "workflow": "Workflow",
+    "documents": "Dokumente",
+    "notifications": "Benachrichtigungen",
+    "admin": "Administration"
+  },
+  "navGroups": {
+    "overview": "Übersicht",
+    "masterData": "Stammdaten",
+    "data": "Daten",
+    "workflow": "Workflow",
+    "reporting": "Abschluss",
+    "system": "System",
+    "rollover": "Rollover",
+    "icRelationships": "IC-Beziehungen",
+    "validationChecklist": "Validierungs-Checkliste",
+    "seedData": "Seed Data"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Konzernabschluss — Übersicht",
+    "subtitleWithPeriod": "Konzernabschluss {{period}} — Übersicht",
+    "entities": "Gesellschaften",
+    "activeEntities": "Aktive Gesellschaften",
+    "countries": "Länder",
+    "foreignCurrency": "Fremdwährung",
+    "periods": "Perioden",
+    "submissions": "Meldungen",
+    "icBalances": "IC-Salden",
+    "recentActivity": "Letzte Aktivitäten",
+    "quickStats": "Schnellübersicht",
+    "activePeriod": "Aktive Periode",
+    "periodName": "Name:",
+    "periodRange": "Zeitraum:",
+    "periodStatus": "Status:",
+    "totalPeriods": "Gesamtperioden",
+    "active": "aktiv",
+    "globalPresence": "globale Präsenz",
+    "ofTotal": "der Gesamtzahl",
+    "allPeriods": "Alle Perioden",
+    "periodsInSystem": "{{count}} Periode im System",
+    "periodsInSystem_plural": "{{count}} Perioden im System",
+    "entitiesByCountry": "Gesellschaften nach Land",
+    "entitiesDistribution": "Verteilung der {{total}} Gesellschaften über {{countries}} Länder",
+    "entityCount": "{{count}} Gesellschaft",
+    "entityCount_plural": "{{count}} Gesellschaften",
+    "noData": "Keine Daten vorhanden",
+    "noDataDescription": "Bitte verwenden Sie die \"Seed Data\" Funktion, um Test-Daten zu erstellen.",
+    "loadError": "Dashboard-Daten konnten nicht geladen werden. Bitte versuchen Sie es erneut.",
+    "statusOpen": "Offen",
+    "statusInProgress": "In Bearbeitung",
+    "statusClosed": "Geschlossen",
+    "statusLocked": "Gesperrt"
+  },
+  "entities": {
+    "title": "Gesellschaften",
+    "description": "Verwaltung aller Konzerngesellschaften (Entity Registry)",
+    "addEntity": "Gesellschaft hinzufügen",
+    "editEntity": "Gesellschaft bearbeiten",
+    "deleteEntity": "Gesellschaft löschen",
+    "newEntity": "Neue Gesellschaft",
+    "createEntity": "Neue Gesellschaft anlegen",
+    "createEntityDescription": "Erfassen Sie die Stammdaten der neuen Gesellschaft.",
+    "entityName": "Gesellschaftsname",
+    "entityCode": "Code",
+    "entityId": "Entity ID",
+    "entityIdPlaceholder": "z.B. 030533",
+    "entityNamePlaceholder": "Firmenname",
+    "country": "Land",
+    "countryPlaceholder": "DE",
+    "currency": "Währung",
+    "currencyPlaceholder": "EUR",
+    "legalForm": "Rechtsform",
+    "gaapStandard": "Rechnungslegungsstandard",
+    "gaap": "GAAP",
+    "gaapHGB": "HGB",
+    "gaapIFRS": "IFRS",
+    "gaapLocalGAAP": "Local GAAP",
+    "consolidationScope": "Konsolidierungskreis",
+    "fiscalYearEnd": "Geschäftsjahresende",
+    "parentEntity": "Muttergesellschaft",
+    "isActive": "Aktiv",
+    "creating": "Wird angelegt...",
+    "createButton": "Gesellschaft anlegen",
+    "total": "Gesamt",
+    "searchPlaceholder": "Suche nach Name oder Entity ID...",
+    "all": "Alle",
+    "entitiesList": "Gesellschaften",
+    "noEntitiesFound": "Keine Gesellschaften gefunden.",
+    "loadError": "Gesellschaften konnten nicht geladen werden."
+  },
+  "periods": {
+    "title": "Berichtsperioden",
+    "subtitle": "Verwaltung der Reporting-Perioden und Close-Kalender",
+    "addPeriod": "Periode hinzufügen",
+    "newPeriod": "Neue Periode",
+    "newReportingPeriod": "Neue Berichtsperiode",
+    "newReportingPeriodDesc": "Legen Sie eine neue Berichtsperiode mit Start- und Enddatum an.",
+    "editPeriod": "Periode bearbeiten",
+    "deletePeriod": "Periode löschen",
+    "periodName": "Periodenname",
+    "periodId": "Perioden-ID",
+    "periodIdPlaceholder": "z.B. FY2025",
+    "periodLabel": "Bezeichnung",
+    "periodLabelPlaceholder": "z.B. Geschäftsjahr 2025",
+    "year": "Jahr",
+    "quarter": "Quartal",
+    "startDate": "Startdatum",
+    "endDate": "Enddatum",
+    "status": "Status",
+    "milestones": "Meilensteine",
+    "comparisonPeriod": "Vergleichsperiode",
+    "comparisonPeriodSelect": "Vergleichsperiode wählen...",
+    "noComparisonPeriod": "Keine",
+    "hasComparisonPeriod": "Vorhanden",
+    "activePeriod": "Aktive Periode",
+    "periodStatus": "Perioden-Status",
+    "nextDeadline": "Nächste Deadline",
+    "noNextDeadline": "Keine anstehende Deadline",
+    "daysRemaining": "{{count}} Tag",
+    "daysRemaining_plural": "{{count}} Tage",
+    "overdue": "Überfällig",
+    "period": "Periode",
+    "timeRange": "Zeitraum",
+    "back": "Zurück",
+    "creating": "Wird angelegt...",
+    "createPeriod": "Periode anlegen",
+    "noPeriodsAvailable": "Keine Berichtsperioden vorhanden.",
+    "loadError": "Berichtsperioden konnten nicht geladen werden.",
+    "noActivePeriodSet": "Keine aktive Berichtsperiode gesetzt. Bitte markieren Sie eine Periode als aktiv.",
+    "statusOpen": "Offen",
+    "statusInProgress": "In Bearbeitung",
+    "statusClosed": "Abgeschlossen",
+    "statusLocked": "Gesperrt",
+    "setActive": "Als aktiv setzen",
+    "lockPeriod": "Periode sperren",
+    "advanceStatus": "Status → {{status}}",
+    "changeStatusConfirm": "Status auf \"{{status}}\" ändern?",
+    "changeStatusDesc": "Der Status wird von \"{{from}}\" auf \"{{to}}\" geändert.",
+    "lockPeriodConfirm": "Eine gesperrte Periode kann nicht mehr bearbeitet werden. Alle Daten werden auf Read-only gesetzt.",
+    "rollover": "Vorträge übernehmen (Rollover)",
+    "closeCalendar": "Abschlusskalender",
+    "closeCalendarDesc": "Meilensteine und Deadlines für diese Berichtsperiode",
+    "noMilestonesDefined": "Keine Meilensteine definiert.",
+    "newMilestone": "Neuer Meilenstein",
+    "addMilestone": "Meilenstein",
+    "milestoneName": "Bezeichnung",
+    "milestoneNamePlaceholder": "z.B. Trial Balance Upload Deadline",
+    "deadline": "Deadline",
+    "type": "Typ",
+    "reminderDaysBefore": "Erinnerung (Tage vorher)",
+    "adding": "Wird hinzugefügt...",
+    "milestoneTypeUpload": "Upload",
+    "milestoneTypeValidation": "Validation",
+    "milestoneTypeReview": "Review",
+    "milestoneTypeApproval": "Approval"
+  },
+  "users": {
+    "title": "Benutzer",
+    "addUser": "Benutzer hinzufügen",
+    "editUser": "Benutzer bearbeiten",
+    "deleteUser": "Benutzer löschen",
+    "userName": "Benutzername",
+    "email": "E-Mail",
+    "role": "Rolle",
+    "language": "Sprache",
+    "entraId": "Entra ID (Object ID)",
+    "entraIdOptional": "Optional - wird automatisch beim ersten Login ausgefüllt",
+    "lastLogin": "Letzter Login",
+    "isActive": "Aktiv"
+  },
+  "roles": {
+    "admin": "Administrator",
+    "groupController": "Group Controller",
+    "localFinance": "Local Finance",
+    "auditor": "Auditor",
+    "viewer": "Betrachter"
+  },
+  "permissions": {
+    "accessDenied": "Zugriff verweigert",
+    "adminOnly": "Diese Seite ist nur für Administratoren zugänglich."
+  },
+  "messages": {
+    "saveSuccess": "Erfolgreich gespeichert",
+    "saveError": "Fehler beim Speichern",
+    "deleteConfirm": "Möchten Sie diesen Eintrag wirklich löschen?",
+    "deleteSuccess": "Erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen",
+    "saving": "Wird gespeichert..."
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "description": "Verwalten Sie Ihre Konto- und Benachrichtigungseinstellungen",
+    "userProfile": "Benutzerprofil",
+    "userProfileDesc": "Ihre persönlichen Informationen",
+    "notifications": "Benachrichtigungen",
+    "notificationsDesc": "Konfigurieren Sie, wie Sie benachrichtigt werden möchten",
+    "emailSettings": "E-Mail-Einstellungen",
+    "emailSettingsDesc": "Verwalten Sie Ihre E-Mail-Präferenzen",
+    "appearance": "Darstellung",
+    "appearanceDesc": "Passen Sie das Aussehen der Anwendung an",
+    "security": "Sicherheit & Datenschutz",
+    "securityDesc": "Ihre Sicherheits- und Datenschutzeinstellungen",
+    "userId": "User ID",
+    "preferredLanguage": "Bevorzugte Sprache",
+    "notSet": "Nicht festgelegt",
+    "notAvailable": "Nicht verfügbar",
+    "notInSystem": "Nicht im System hinterlegt",
+    "deadlineReminders": "Deadline-Erinnerungen",
+    "deadlineRemindersDesc": "E-Mail bei anstehenden Fristen",
+    "submissionUpdates": "Einreichungs-Updates",
+    "submissionUpdatesDesc": "Benachrichtigung bei Statusänderungen",
+    "icDifferences": "IC-Differenzen",
+    "icDifferencesDesc": "Warnung bei IC-Abweichungen",
+    "workflowStatus": "Workflow-Status",
+    "workflowStatusDesc": "Updates zu Genehmigungen",
+    "dailySummary": "Tägliche Zusammenfassung",
+    "dailySummaryDesc": "Täglicher Übersichts-Report",
+    "reminderLeadTime": "Erinnerungs-Vorlaufzeit",
+    "reminderLeadTimeDesc": "Tage vor Deadline für Erinnerungen",
+    "days": "Tage",
+    "darkMode": "Dunkler Modus",
+    "darkModeDesc": "Dunkles Farbschema verwenden",
+    "language": "Sprache",
+    "languageDesc": "Anzeigesprache der Oberfläche",
+    "selectLanguage": "Sprache wählen",
+    "activityLog": "Aktivitätsprotokoll",
+    "activityLogDesc": "Alle Ihre Aktionen werden auditiert und protokolliert",
+    "viewLog": "Protokoll anzeigen",
+    "activeSessions": "Aktive Sitzungen",
+    "activeSessionsDesc": "Verwalten Sie Ihre angemeldeten Geräte",
+    "manageSessions": "Sitzungen verwalten",
+    "adminAccess": "Admin-Zugriff",
+    "adminAccessDesc": "Sie sind noch kein Administrator. Klicken Sie hier, um sich Admin-Rechte zu geben.",
+    "setAsAdmin": "Als Admin setzen",
+    "updating": "Wird aktualisiert...",
+    "reset": "Zurücksetzen",
+    "saveChanges": "Änderungen speichern",
+    "saving": "Speichern...",
+    "appearanceChanged": "Darstellung geändert",
+    "darkModeActivated": "Dunkler Modus aktiviert",
+    "lightModeActivated": "Heller Modus aktiviert",
+    "languageChanged": "Sprache geändert",
+    "languageChangedDesc": "Die Anzeigesprache wurde geändert auf",
+    "userNotFound": "Benutzer nicht gefunden",
+    "cannotUpdateLanguage": "Sprache konnte nicht geändert werden",
+    "saved": "Gespeichert",
+    "settingsSavedDesc": "Ihre Einstellungen wurden erfolgreich gespeichert",
+    "cannotSaveSettings": "Einstellungen konnten nicht gespeichert werden",
+    "adminPromotionSuccess": "Erfolgreich",
+    "adminPromotionSuccessDesc": "Sie wurden zum Administrator ernannt",
+    "cannotUpdateRole": "Rolle konnte nicht aktualisiert werden"
+  },
+  "admin": {
+    "title": "Administration",
+    "description": "Benutzer, Kontenrahmen, Wechselkurse und Systemeinstellungen",
+    "tabs": {
+      "users": "Benutzer",
+      "rates": "Wechselkurse",
+      "coa": "Kontenrahmen",
+      "validation": "Validierungsregeln",
+      "settings": "Einstellungen",
+      "audit": "Audit-Log"
+    },
+    "users": {
+      "noPermission": "Sie haben keine Berechtigung für diese Funktion. Nur Administratoren können Benutzer verwalten.",
+      "createUser": "Benutzer anlegen",
+      "searchPlaceholder": "Benutzer suchen...",
+      "noUsersFound": "Keine Benutzer gefunden",
+      "userFormDesc": "Geben Sie die Benutzerdaten ein.",
+      "nameField": "Name *",
+      "namePlaceholder": "Max Mustermann",
+      "emailField": "E-Mail *",
+      "emailPlaceholder": "max.mustermann@example.com",
+      "entraIdPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "roleField": "Rolle *",
+      "languageField": "Sprache *",
+      "userIsActive": "Benutzer ist aktiv",
+      "requiredFields": "Bitte füllen Sie alle Pflichtfelder aus",
+      "userUpdated": "Benutzer aktualisiert",
+      "userUpdatedDesc": "Die Änderungen wurden erfolgreich gespeichert.",
+      "userCreated": "Benutzer erstellt",
+      "userCreatedDesc": "Der neue Benutzer wurde erfolgreich angelegt.",
+      "userSaveError": "Der Benutzer konnte nicht gespeichert werden.",
+      "deleteConfirm": "Benutzer \"{{userName}}\" wirklich löschen?",
+      "userDeleted": "Benutzer gelöscht",
+      "userDeletedDesc": "Der Benutzer wurde erfolgreich entfernt.",
+      "userDeleteError": "Der Benutzer konnte nicht gelöscht werden."
+    },
+    "validation": {
+      "noPermission": "Sie haben keine Berechtigung für diese Funktion. Nur Administratoren können Validierungsregeln verwalten.",
+      "title": "Validierungsregeln ({{count}} Regeln)",
+      "description": "Definieren Sie Prüfregeln für den Submit-Gate-Prozess",
+      "createRule": "Regel erstellen",
+      "searchPlaceholder": "Regel suchen (ID oder Bezeichnung)...",
+      "noRulesFound": "Keine Regeln gefunden",
+      "noRulesYet": "Noch keine Validierungsregeln angelegt.",
+      "ruleId": "Regel-ID",
+      "designation": "Bezeichnung",
+      "category": "Kategorie",
+      "severity": "Schweregrad",
+      "version": "Version",
+      "editRule": "Validierungsregel bearbeiten",
+      "newRule": "Neue Validierungsregel",
+      "editRuleDesc": "Aktualisieren Sie die Regel \"{{ruleId}}\"",
+      "newRuleDesc": "Erstellen Sie eine neue Validierungsregel für den Submit-Gate-Prozess",
+      "ruleIdField": "Regel-ID *",
+      "ruleIdPlaceholder": "z.B. BAL-001",
+      "nameDE": "Bezeichnung (Deutsch) *",
+      "nameDEPlaceholder": "z.B. Saldierung der Summenbilanz",
+      "nameEN": "Bezeichnung (English)",
+      "nameENPlaceholder": "e.g. Trial Balance Totals",
+      "threshold": "Schwellenwert (optional)",
+      "thresholdPlaceholder": "z.B. 0.01",
+      "expression": "Regelausdruck (optional)",
+      "expressionPlaceholder": "z.B. SUM(Soll) - SUM(Haben) == 0",
+      "formulaDesc": "Formelbeschreibung (optional)",
+      "formulaDescPlaceholder": "Beschreibung der Prüflogik",
+      "errorTemplate": "Fehlervorlage (optional)",
+      "errorTemplatePlaceholder": "z.B. Differenz von {delta} EUR festgestellt",
+      "ruleIsActive": "Regel ist aktiv",
+      "requiredFields": "Regel-ID und Bezeichnung (DE) sind Pflichtfelder",
+      "ruleUpdated": "Regel aktualisiert",
+      "ruleUpdatedDesc": "Die Validierungsregel wurde erfolgreich aktualisiert.",
+      "ruleCreated": "Regel erstellt",
+      "ruleCreatedDesc": "Die neue Validierungsregel wurde erfolgreich angelegt.",
+      "ruleSaveError": "Die Regel konnte nicht gespeichert werden.",
+      "rulePublished": "Regel veröffentlicht",
+      "rulePublishedDesc": "Regel \"{{ruleId}}\" ist jetzt aktiv.",
+      "rulePublishError": "Die Regel konnte nicht veröffentlicht werden.",
+      "ruleDisabled": "Regel deaktiviert",
+      "ruleDisabledDesc": "Regel \"{{ruleId}}\" wurde deaktiviert.",
+      "ruleDisableError": "Die Regel konnte nicht deaktiviert werden.",
+      "deleteConfirm": "Regel \"{{ruleName}}\" wirklich löschen?",
+      "ruleDeleted": "Regel gelöscht",
+      "ruleDeletedDesc": "Die Validierungsregel wurde erfolgreich entfernt.",
+      "ruleDeleteError": "Die Regel konnte nicht gelöscht werden.",
+      "categoryBalance": "Saldierung",
+      "categoryCompleteness": "Vollständigkeit",
+      "categoryPlausibility": "Plausibilität",
+      "categoryCrossSchedule": "Cross-Schedule",
+      "statusDraft": "Entwurf",
+      "statusActive": "Aktiv",
+      "statusDisabled": "Deaktiviert",
+      "severityInfo": "Info",
+      "severityWarning": "Warnung",
+      "severityError": "Fehler"
+    },
+    "coa": {
+      "noPermission": "Sie haben keine Berechtigung für diese Funktion. Nur Administratoren können den Kontenrahmen verwalten.",
+      "title": "Kontenrahmen ({{count}} Konten)",
+      "description": "REMONDIS Konzernkontenrahmen — HGB-basiert mit IC-Suffix",
+      "excelImportPlanned": "Excel Import wird noch implementiert",
+      "excelImport": "Excel Import",
+      "createAccount": "Konto anlegen",
+      "searchPlaceholder": "Konto suchen (Nr. oder Bezeichnung)...",
+      "noAccountsFound": "Keine Konten gefunden",
+      "noAccountsYet": "Keine Konten geladen. Kontenrahmen kann über Excel importiert werden.",
+      "accountNumber": "Kontonr.",
+      "designationDE": "Bezeichnung (DE)",
+      "balanceGroup": "Bilanzgruppe",
+      "ic": "IC",
+      "type": "Typ",
+      "sumAccount": "Summe",
+      "account": "Konto",
+      "showing100": "Zeige erste 100 von {{count}} Konten",
+      "editAccount": "Konto bearbeiten",
+      "newAccount": "Neues Konto anlegen",
+      "accountFormDesc": "Geben Sie die Kontodaten ein. Alle Felder mit * sind Pflichtfelder.",
+      "accountNumberField": "Kontonummer *",
+      "accountNumberPlaceholder": "z.B. 1000",
+      "balanceGroupField": "Bilanzgruppe *",
+      "balanceGroupPlaceholder": "z.B. A1",
+      "nameDEField": "Bezeichnung (Deutsch) *",
+      "nameDEPlaceholder": "z.B. Kasse",
+      "nameENField": "Bezeichnung (Englisch)",
+      "nameENPlaceholder": "z.B. Cash",
+      "parentAccount": "Übergeordnetes Konto",
+      "parentAccountPlaceholder": "z.B. 1000 (optional)",
+      "icAccount": "IC-Konto",
+      "requiredFields": "Bitte füllen Sie alle Pflichtfelder aus",
+      "accountUpdated": "Konto aktualisiert",
+      "accountUpdatedDesc": "Die Änderungen wurden erfolgreich gespeichert.",
+      "accountCreated": "Konto erstellt",
+      "accountCreatedDesc": "Das neue Konto wurde erfolgreich angelegt.",
+      "accountSaveError": "Das Konto konnte nicht gespeichert werden.",
+      "deleteConfirm": "Konto \"{{accountName}}\" wirklich löschen?",
+      "accountDeleted": "Konto gelöscht",
+      "accountDeletedDesc": "Das Konto wurde erfolgreich entfernt.",
+      "accountDeleteError": "Das Konto konnte nicht gelöscht werden."
+    },
+    "rates": {
+      "selectPeriod": "Periode wählen",
+      "importing": "Importiere...",
+      "importRates": "Kurse importieren",
+      "title": "Wechselkurse",
+      "description": "Stichtagskurs (31.12.) und Durchschnittskurs",
+      "noRatesForPeriod": "Keine Wechselkurse für diese Periode hinterlegt.",
+      "currency": "Währung",
+      "spotRate": "Stichtagskurs",
+      "averageRate": "Durchschnittskurs",
+      "selectPeriodAndFile": "Bitte wählen Sie eine Periode und eine Datei aus.",
+      "excelNoData": "Die Excel-Datei enthält keine Daten.",
+      "importCompleted": "Import abgeschlossen",
+      "importCompletedDesc": "{{imported}} Kurse importiert, {{updated}} aktualisiert{{errors, select, 0{} other{, {{errors}} Fehler}}}.",
+      "importError": "Fehler beim Importieren der Wechselkurse."
+    },
+    "settings": {
+      "title": "Systemeinstellungen",
+      "noSettings": "Keine Systemeinstellungen vorhanden.",
+      "creating": "Wird erstellt...",
+      "createInitial": "Initiale Einstellungen erstellen",
+      "key": "Schlüssel",
+      "value": "Wert",
+      "updated": "Aktualisiert",
+      "userNotFound": "Benutzer nicht gefunden",
+      "settingsInitialized": "{{count}} Systemeinstellungen wurden initialisiert.",
+      "settingsInitError": "Systemeinstellungen konnten nicht erstellt werden."
+    },
+    "audit": {
+      "searchPlaceholder": "Aktion oder Beschreibung...",
+      "eventType": "Ereignistyp",
+      "all": "Alle",
+      "from": "Von",
+      "to": "Bis",
+      "pdfExport": "PDF Export",
+      "excelExport": "Excel Export",
+      "title": "Audit-Log ({{count}} Einträge)",
+      "description": "Vollständige Protokollierung aller Änderungen und Aktionen im System",
+      "noEntries": "Keine Audit-Log Einträge gefunden.",
+      "timestamp": "Zeitstempel",
+      "type": "Typ",
+      "entity": "Gesellschaft",
+      "action": "Aktion",
+      "oldValue": "Alter Wert",
+      "newValue": "Neuer Wert",
+      "typeDataChange": "Datenänderung",
+      "typeWorkflow": "Workflow",
+      "typeConsolidation": "Konsolidierung",
+      "typeSystem": "System"
+    },
+    "documents": {
+      "title": "Dokumenten-Anhänge",
+      "uploadDocument": "Dokument hochladen",
+      "description": "Prüfberichte, Bestätigungen und weitere Belege",
+      "noDocuments": "Keine Dokumente vorhanden.",
+      "entity": "Gesellschaft",
+      "category": "Kategorie",
+      "filename": "Dateiname",
+      "date": "Datum",
+      "categoryAuditReport": "Prüfbericht",
+      "categoryConfirmation": "Bestätigung",
+      "categoryExcelUpload": "Excel-Upload",
+      "categoryOther": "Sonstiges"
+    }
+  },
+  "dataEntry": {
+    "title": "Datenerfassung",
+    "subtitle": "Trial Balance und Financial Schedules erfassen",
+    "filters": {
+      "entity": "Gesellschaft",
+      "selectEntity": "Gesellschaft wählen...",
+      "period": "Zeitraum"
+    },
+    "progress": {
+      "label": "Fortschritt",
+      "submitted": "eingereicht",
+      "inProgress": "in Bearbeitung",
+      "open": "offen"
+    },
+    "status": {
+      "empty": "Offen",
+      "draft": "Entwurf",
+      "submitted": "Eingereicht"
+    },
+    "validation": {
+      "submitAllowed": "Submit möglich — Alle Validierungen bestanden",
+      "submitBlocked": "Submit gesperrt — Validierungen müssen bestanden werden",
+      "rulesPassed": "Regeln bestanden",
+      "openChecklist": "Checkliste öffnen"
+    },
+    "buttons": {
+      "saveDraft": "Entwurf speichern",
+      "saving": "Wird gespeichert...",
+      "submit": "Einreichen",
+      "submitting": "Wird eingereicht..."
+    },
+    "messages": {
+      "missingData": "Erforderliche Daten fehlen",
+      "draftSaved": "Entwurf gespeichert",
+      "draftSavedDesc": "Ihre Änderungen wurden als Entwurf gespeichert.",
+      "draftSaveError": "Entwurf konnte nicht gespeichert werden.",
+      "submitSuccess": "Erfolgreich eingereicht",
+      "submitSuccessDesc": "Das Schedule wurde zur Prüfung eingereicht.",
+      "submitError": "Schedule konnte nicht eingereicht werden.",
+      "validationRequired": "Submit nicht möglich: {{count}} Validierungsregeln müssen bestanden werden. Prüfen Sie die Validierungs-Checkliste."
+    },
+    "errors": {
+      "noActivePeriod": "Kein aktiver Berichtszeitraum gefunden. Bitte konfigurieren Sie einen aktiven Zeitraum unter Einstellungen.",
+      "noActiveEntities": "Keine aktiven Gesellschaften vorhanden. Bitte legen Sie eine Gesellschaft an.",
+      "icBalancesLoadError": "IC-Salden konnten nicht geladen werden.",
+      "scheduleLoadError": "{{schedule}} konnten nicht geladen werden.",
+      "liabilitiesLoadError": "Verbindlichkeitenspiegel konnte nicht geladen werden.",
+      "checklistLoadError": "Checkliste konnte nicht geladen werden."
+    },
+    "icCategories": {
+      "lul": "L+L",
+      "loans": "Darlehen",
+      "cashpool": "Cashpool",
+      "other": "Sonstige",
+      "revenue": "Umsätze",
+      "expenses": "Aufwendungen"
+    },
+    "scheduleNames": {
+      "trialBalance": {
+        "label": "Kontensalden (Trial Balance)",
+        "short": "Kontensalden"
+      },
+      "bilanz": {
+        "label": "Bilanz (auto)",
+        "short": "Bilanz"
+      },
+      "guv": {
+        "label": "GuV (auto)",
+        "short": "GuV"
+      },
+      "icBalances": {
+        "label": "IC-Kontensalden",
+        "short": "IC-Salden"
+      },
+      "fixedAssets": {
+        "label": "Anlagenbewegungen",
+        "short": "Anlagen"
+      },
+      "financialInv": {
+        "label": "Aufteilung Finanzanlagen",
+        "short": "Finanzanl."
+      },
+      "equity": {
+        "label": "Kapitalbewegungen",
+        "short": "Eigenkapital"
+      },
+      "retainedEarnings": {
+        "label": "Anpassung Gewinnvortrag",
+        "short": "Gewinnvortr."
+      },
+      "provisions": {
+        "label": "Rückstellungsbewegungen",
+        "short": "Rückstell."
+      },
+      "pensions": {
+        "label": "Differenz Pensionsrückstellung",
+        "short": "Pensionen"
+      },
+      "liabilities": {
+        "label": "Verbindlichkeitenspiegel",
+        "short": "Verbindl."
+      },
+      "bankLoans": {
+        "label": "Entwicklung Darlehen Kreditinst.",
+        "short": "Darlehen"
+      },
+      "secured": {
+        "label": "Gesicherte Verbindlichkeiten",
+        "short": "Gesicherte V."
+      },
+      "offBalance": {
+        "label": "Nicht in Bilanz enth. Geschäfte",
+        "short": "Off-Balance"
+      },
+      "relatedParty": {
+        "label": "Geschäfte mit nahest. Personen",
+        "short": "Related Party"
+      },
+      "contingent": {
+        "label": "Eventualverbindlichkeiten",
+        "short": "Eventual."
+      },
+      "auditorFees": {
+        "label": "Honorar WP & StB",
+        "short": "WP-Honorar"
+      },
+      "extraordinary": {
+        "label": "Neutrales Ergebnis",
+        "short": "Neutral. Erg."
+      },
+      "icProfit": {
+        "label": "Zwischenergebnis",
+        "short": "IC-Ergebnis"
+      },
+      "checklist": {
+        "label": "Checkliste",
+        "short": "Checkliste"
+      }
+    },
+    "schedules": {
+      "loading": "Schedule wird geladen...",
+      "autoGenerated": {
+        "badge": "Auto-generiert",
+        "message": "Dieser Bericht wird automatisch aus den Kontensalden (Trial Balance) generiert. Keine manuelle Eingabe erforderlich."
+      },
+      "bilanz": {
+        "title": "Bilanz",
+        "description": "Automatisch generiert aus den Kontensalden — Aktiva und Passiva nach HGB-Gliederung"
+      },
+      "guv": {
+        "title": "Gewinn- und Verlustrechnung",
+        "description": "Automatisch generiert aus den Kontensalden — GuV nach Gesamtkostenverfahren (HGB)"
+      },
+      "icBalances": {
+        "title": "IC-Kontensalden pro Partner",
+        "description": "Intercompany-Salden aufgeschlüsselt nach IC-Kontotyp",
+        "partner": "IC-Partner",
+        "total": "Gesamt",
+        "sum": "Summe",
+        "addPartner": "Partner hinzufügen..."
+      },
+      "movement": {
+        "category": "Kategorie",
+        "opening": "Anfangsbestand",
+        "additions": "Zugänge",
+        "disposals": "Abgänge",
+        "transfers": "Umbuchungen",
+        "closing": "Endbestand",
+        "sum": "Summe",
+        "noEntries": "Keine Einträge vorhanden. Bitte fügen Sie Positionen hinzu."
+      },
+      "fixedAssets": {
+        "title": "Anlagenbewegungen",
+        "description": "Anlagenspiegel: Bruttowerte und kumulierte Abschreibungen pro Anlageklasse"
+      },
+      "equity": {
+        "title": "Kapitalbewegungen",
+        "description": "Eigenkapitalspiegel mit Veränderungen pro Kapitalkomponente"
+      },
+      "provisions": {
+        "title": "Rückstellungsbewegungen",
+        "description": "Rückstellungsspiegel: Anfangsbestand, Zuführung, Auflösung, Inanspruchnahme, Endbestand"
+      },
+      "liabilities": {
+        "title": "Verbindlichkeitenspiegel",
+        "description": "Aufgliederung nach Restlaufzeit",
+        "category": "Kategorie",
+        "lt1year": "< 1 Jahr",
+        "y1to5": "1–5 Jahre",
+        "gt5years": "> 5 Jahre",
+        "total": "Gesamt",
+        "sum": "Summe",
+        "noEntries": "Keine Einträge vorhanden."
+      },
+      "generic": {
+        "position": "Position",
+        "noEntries": "Keine Einträge vorhanden."
+      },
+      "financialInv": {
+        "title": "Aufteilung Finanzanlagen",
+        "description": "Details zu Beteiligungen und Ausleihungen",
+        "bookValue": "Buchwert",
+        "sharePercent": "Anteil %"
+      },
+      "retainedEarnings": {
+        "title": "Erläuterung Anpassung Gewinnvortrag",
+        "description": "Überleitung des Gewinnvortrags",
+        "amount": "Betrag"
+      },
+      "pensions": {
+        "title": "Differenz Pensionsrückstellung",
+        "description": "Pensionsrückstellungs-Delta nach BilMoG",
+        "priorYear": "Vorjahr",
+        "currentYear": "Berichtsjahr",
+        "difference": "Differenz"
+      },
+      "bankLoans": {
+        "title": "Entwicklung Darlehen Kreditinstitute",
+        "description": "Bankdarlehen-Entwicklung im Berichtsjahr",
+        "opening": "Anfangsbestand",
+        "drawdown": "Aufnahme",
+        "repayment": "Tilgung",
+        "closing": "Endbestand"
+      },
+      "secured": {
+        "title": "Gesicherte Verbindlichkeiten",
+        "description": "Durch Pfandrechte oder ähnliche Rechte besicherte Verbindlichkeiten",
+        "bookValue": "Buchwert Verbindlichkeit",
+        "collateral": "Sicherheit"
+      },
+      "offBalance": {
+        "title": "Nicht in der Bilanz enthaltene Geschäfte",
+        "description": "Off-Balance Sheet Items: Leasing, Factoring, ABS",
+        "nominalValue": "Nominalwert"
+      },
+      "relatedParty": {
+        "title": "Geschäfte mit nahestehenden Personen",
+        "description": "Related Party Transactions gem. § 285 Nr. 21 HGB",
+        "revenue": "Umsätze",
+        "receivables": "Forderungen",
+        "payables": "Verbindlichkeiten"
+      },
+      "contingent": {
+        "title": "Eventualverbindlichkeiten",
+        "description": "Contingent Liabilities gem. § 251 HGB",
+        "amount": "Betrag"
+      },
+      "auditorFees": {
+        "title": "Honorar Wirtschaftsprüfer & Steuerberater",
+        "description": "Aufgliederung der Prüfer- und Beraterkosten",
+        "priorYear": "Vorjahr",
+        "currentYear": "Berichtsjahr"
+      },
+      "extraordinary": {
+        "title": "Neutrales Ergebnis",
+        "description": "Außerordentliche und periodenfremde Erträge/Aufwendungen",
+        "income": "Erträge",
+        "expenses": "Aufwendungen"
+      },
+      "icProfit": {
+        "title": "Zwischenergebnis",
+        "description": "Intercompany-Zwischengewinne die im Konzernabschluss eliminiert werden",
+        "priorYear": "Vorjahr",
+        "currentYear": "Berichtsjahr"
+      },
+      "checklist": {
+        "title": "Abschluss-Checkliste",
+        "description": "Alle Prüfpunkte vor Einreichung abhaken",
+        "completed": "erledigt",
+        "commentPlaceholder": "Kommentar (optional)...",
+        "noItems": "Keine Checklisten-Einträge vorhanden."
+      }
+    }
+  },
+  "icRelationships": {
+    "title": "IC-Beziehungen",
+    "subtitle": "Intercompany Relationship Mapping",
+    "loadError": "IC-Beziehungen konnten nicht geladen werden.",
+    "types": {
+      "lul": "LuL",
+      "loans": "Darlehen",
+      "cashpool": "Cashpool",
+      "other": "Sonstige",
+      "revenue": "Umsatz",
+      "expenses": "Aufwand",
+      "shareholder": "Gesellschafter",
+      "participation": "Beteiligung"
+    },
+    "dialog": {
+      "addNew": "Neue IC-Beziehung",
+      "title": "IC-Beziehung anlegen",
+      "description": "Definieren Sie eine neue IC-Beziehung zwischen zwei Gesellschaften.",
+      "entityA": "Gesellschaft A",
+      "entityB": "Gesellschaft B",
+      "selectEntityA": "Gesellschaft A wählen...",
+      "selectEntityB": "Gesellschaft B wählen...",
+      "icTypes": "IC-Typen",
+      "creating": "Wird angelegt...",
+      "create": "Anlegen"
+    },
+    "matrix": {
+      "title": "IC-Matrix",
+      "entitiesCount": "{{count}} Gesellschaft mit IC-Beziehungen",
+      "entitiesCount_plural": "{{count}} Gesellschaften mit IC-Beziehungen"
+    },
+    "list": {
+      "title": "IC-Beziehungen",
+      "activeCount": "{{count}} aktive Beziehung",
+      "activeCount_plural": "{{count}} aktive Beziehungen",
+      "searchPlaceholder": "Suche nach Entity...",
+      "allTypes": "Alle Typen",
+      "entityA": "Entity A",
+      "entityB": "Entity B",
+      "icTypes": "IC-Typen",
+      "noRelationships": "Keine IC-Beziehungen gefunden."
+    },
+    "stats": {
+      "activeRelationships": "Aktive Beziehungen",
+      "involvedEntities": "Beteiligte Gesellschaften",
+      "typesUsed": "IC-Typen verwendet"
+    },
+    "tabs": {
+      "matrix": "Matrix",
+      "list": "Liste"
+    }
+  },
+  "reports": {
+    "title": "Berichte & Export",
+    "subtitle": "PDF, Excel und XBRL -- Einzel- und Konzernberichte generieren und herunterladen",
+    "tabs": {
+      "generate": "Bericht generieren",
+      "downloads": "Download-Center",
+      "templates": "Vorlagen"
+    },
+    "errors": {
+      "loadError": "Daten konnten nicht geladen werden. Bitte versuchen Sie es erneut."
+    },
+    "reportGroups": {
+      "einzelabschluss": "Einzelabschluss",
+      "konzern": "Konzern"
+    },
+    "reportTypes": {
+      "bilanz": "Bilanz",
+      "guv": "GuV",
+      "anlagenspiegel": "Anlagenspiegel",
+      "eigenkapitalspiegel": "Eigenkapitalspiegel",
+      "rueckstellungsspiegel": "Rückstellungsspiegel",
+      "verbindlichkeitenspiegel": "Verbindlichkeitenspiegel",
+      "icSalden": "IC-Salden-Bestätigung",
+      "prueferReport": "Prüfer-Report",
+      "reportingPackage": "Reporting Package",
+      "validierungsbericht": "Validierungsbericht",
+      "konzernbilanz": "Konzernbilanz",
+      "konzernGuv": "Konzern-GuV",
+      "konzernAnlagenspiegel": "Konzern-Anlagenspiegel",
+      "konzernEigenkapitalspiegel": "Konzern-Eigenkapitalspiegel",
+      "icEliminierung": "IC-Eliminierungsbericht",
+      "konsolidierungsprotokoll": "Konsolidierungsprotokoll"
+    },
+    "categories": {
+      "auditReport": "Prüfbericht",
+      "confirmation": "Bestätigung",
+      "excelUpload": "Excel-Upload",
+      "other": "Sonstiges"
+    },
+    "generate": {
+      "reportType": "Berichtstyp",
+      "reportTypeDesc": "Art des zu generierenden Berichts auswählen",
+      "selectReportType": "Berichtstyp wählen...",
+      "scope": "Berichtsumfang",
+      "scopeDesc": "Einzelgesellschaft, Batch-Export oder Konzernabschluss",
+      "scopeSingle": "Einzelne Gesellschaft",
+      "scopeBatch": "Alle Gesellschaften (ZIP)",
+      "scopeKonzern": "Konzern",
+      "entity": "Gesellschaft",
+      "selectEntity": "Gesellschaft wählen...",
+      "reportingPeriod": "Berichtszeitraum",
+      "comparisonPeriod": "Vergleichszeitraum",
+      "outputFormat": "Ausgabeformat",
+      "options": "Optionen",
+      "includePriorYear": "Vorjahresvergleich einbeziehen",
+      "draftWatermarkActive": "DRAFT-Wasserzeichen aktiv",
+      "draftWatermarkActiveDesc": "Die ausgewählte Gesellschaft ({{entity}}) ist noch nicht freigegeben. Der Bericht wird automatisch mit einem DRAFT-Wasserzeichen versehen.",
+      "draftWatermarkInfo": "DRAFT-Wasserzeichen wird automatisch aktiviert, wenn die Gesellschaft noch nicht freigegeben ist.",
+      "language": "Sprache",
+      "generating": "Bericht wird generiert...",
+      "generateSuccess": "Bericht erfolgreich generiert! Sie finden ihn im Download-Center.",
+      "generateButton": "Bericht generieren"
+    },
+    "preview": {
+      "title": "Vorschau",
+      "description": "Erste Seite des Berichts",
+      "annualReport": "Geschäftsbericht",
+      "selectReportType": "Berichtstyp wählen",
+      "allEntities": "Alle Gesellschaften",
+      "selectEntity": "Gesellschaft wählen",
+      "reportingPeriod": "Berichtszeitraum",
+      "comparison": "Vgl.",
+      "german": "Deutsch",
+      "english": "Englisch",
+      "priorYearComparison": "Vorjahresvergleich"
+    },
+    "downloads": {
+      "loadError": "Dokumente konnten nicht geladen werden.",
+      "searchPlaceholder": "Dokument oder Dateiname suchen...",
+      "category": "Kategorie",
+      "allCategories": "Alle Kategorien",
+      "period": "Periode",
+      "allPeriods": "Alle Perioden",
+      "selected": "{{count}} ausgewählt",
+      "clearSelection": "Auswahl aufheben",
+      "downloadZip": "Als ZIP herunterladen",
+      "documentName": "Dokumentname",
+      "entity": "Gesellschaft",
+      "format": "Format",
+      "uploadedAt": "Hochgeladen am",
+      "actions": "Aktionen",
+      "noDocuments": "Keine Dokumente gefunden.",
+      "loading": "Lade Dokumente...",
+      "showing": "{{filtered}} von {{total}} Dokumenten angezeigt"
+    },
+    "templates": {
+      "companyLogo": "Firmenlogo",
+      "logoDesc": "Logo für die Kopfzeile der Berichte hochladen",
+      "currentLogo": "Aktuelles Logo",
+      "uploadPrompt": "Logo hier ablegen oder klicken zum Hochladen",
+      "uploadHint": "PNG, JPG oder SVG, max. 2 MB",
+      "fontSize": "Schriftgröße",
+      "fontSizeDesc": "Standard-Schriftgröße für PDF-Berichte",
+      "headerFooter": "Kopf- und Fußzeile",
+      "headerFooterDesc": "Konfiguration für die Kopf- und Fußzeile der PDF-Berichte. Verfügbare Platzhalter: {Periode}, {Datum}, {Seite}, {Gesamt}, {Gesellschaft}",
+      "header": "Kopfzeile",
+      "footer": "Fußzeile",
+      "left": "Links",
+      "center": "Mitte",
+      "right": "Rechts",
+      "headerLeftPlaceholder": "Kopfzeile links",
+      "headerCenterPlaceholder": "Kopfzeile Mitte",
+      "headerRightPlaceholder": "Kopfzeile rechts",
+      "footerLeftPlaceholder": "Fußzeile links",
+      "footerCenterPlaceholder": "Fußzeile Mitte",
+      "footerRightPlaceholder": "Fußzeile rechts",
+      "preview": "Vorschau"
+    }
+  },
+  "workflow": {
+    "title": "Freigabe-Workflow",
+    "subtitle": "Review & Approval — mehrstufige Freigabe",
+    "loadError": "Workflow-Daten konnten nicht geladen werden.",
+    "stages": {
+      "localSubmit": "Local Submit",
+      "controllerReview": "Controller Review",
+      "auditorReview": "Auditor Review",
+      "finalClose": "Final Close"
+    },
+    "actions": {
+      "submitted": "Eingereicht",
+      "approved": "Freigegeben",
+      "rejected": "Abgelehnt",
+      "finding": "Finding",
+      "signedOff": "Sign-Off",
+      "reOpened": "Re-Opened"
+    },
+    "submissionStatus": {
+      "submitted": "eingereicht",
+      "approved": "freigegeben",
+      "rejected": "abgelehnt",
+      "draft": "Entwurf",
+      "underReview": "in Prüfung",
+      "notStarted": "offen"
+    },
+    "tabs": {
+      "myQueue": "Meine Queue",
+      "approvalHistory": "Freigabe-Historie"
+    },
+    "filters": {
+      "searchPlaceholder": "Suche nach Name oder Entity ID...",
+      "stage": "Stage",
+      "allStages": "Alle Stufen",
+      "country": "Land",
+      "allCountries": "Alle Länder"
+    },
+    "queue": {
+      "title": "Review Queue ({{count}})",
+      "description": "Packages die auf Ihre Prüfung warten",
+      "itemsSelected": "{{count}} ausgewählt",
+      "batchApprove": "Batch-Freigabe",
+      "approvingBatch": "Wird freigegeben...",
+      "entity": "Entity",
+      "stage": "Stage",
+      "lastActionBy": "Letzte Aktion von",
+      "date": "Datum",
+      "daysOpen": "Tage offen",
+      "viewDetail": "Detail anzeigen",
+      "approve": "Freigeben",
+      "reject": "Ablehnen",
+      "noEntries": "Keine Einträge in der Queue."
+    },
+    "history": {
+      "title": "Freigabe-Historie ({{count}})",
+      "searchPlaceholder": "Suche nach Entity...",
+      "stage": "Stufe",
+      "action": "Aktion",
+      "allActions": "Alle Aktionen",
+      "dateFrom": "Von (YYYY-MM-DD)",
+      "dateTo": "Bis (YYYY-MM-DD)",
+      "entity": "Entity",
+      "performedBy": "Durchgeführt von",
+      "timestamp": "Zeitstempel",
+      "comment": "Kommentar",
+      "noEntries": "Keine Freigabe-Einträge gefunden."
+    },
+    "detail": {
+      "workflowStatus": "Workflow-Status",
+      "submittedSchedules": "Eingereichte Schedules",
+      "noSchedules": "Keine Schedules vorhanden.",
+      "commentsHistory": "Kommentare & Verlauf",
+      "noEntries": "Keine Einträge vorhanden.",
+      "addCommentPlaceholder": "Kommentar hinzufügen...",
+      "approve": "Freigeben",
+      "reject": "Ablehnen",
+      "reOpen": "Re-Open"
+    },
+    "rejectDialog": {
+      "title": "Package ablehnen",
+      "description": "Bitte geben Sie einen Grund für die Ablehnung an.",
+      "reasonPlaceholder": "Ablehnungsgrund eingeben...",
+      "rejecting": "Wird abgelehnt...",
+      "rejectButton": "Ablehnen"
+    },
+    "signatureDialog": {
+      "title": "Digitale Bestätigung",
+      "description": "Bitte bestätigen Sie die Freigabe mit Ihrer digitalen Signatur.",
+      "confirmationText": "Ich bestätige, dass die Daten der Gesellschaft {{entityName}} für die Periode {{period}} vollständig und korrekt sind.",
+      "user": "Benutzer",
+      "role": "Rolle",
+      "timestamp": "Zeitstempel",
+      "entity": "Entity",
+      "confirming": "Wird bestätigt...",
+      "confirmButton": "Bestätigen & Freigeben"
+    },
+    "toast": {
+      "batchApproveSuccess": "Freigabe erfolgreich",
+      "batchApproveSuccessDesc": "{{count}} Package wurde freigegeben.",
+      "batchApproveSuccessDesc_plural": "{{count}} Packages wurden freigegeben.",
+      "batchApproveError": "Batch-Freigabe fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "reOpenSuccess": "Package wieder geöffnet",
+      "reOpenSuccessDesc": "{{entityName}} wurde zur Überarbeitung freigegeben.",
+      "reOpenError": "Package konnte nicht wieder geöffnet werden.",
+      "reOpenComment": "Package wurde zur erneuten Überprüfung geöffnet"
+    }
+  },
+  "notifications": {
+    "title": "Benachrichtigungen",
+    "subtitle": "Notification Center",
+    "description": "Notification Center — alle Benachrichtigungen und Einstellungen",
+    "loadError": "Fehler beim Laden der Benachrichtigungen.",
+    "breakdown": "Aufschlüsselung",
+    "unreadCount": "{{count}} Ungelesen",
+    "totalCount": "{{count}} Gesamt",
+    "empty": "Keine Benachrichtigungen gefunden.",
+    "tabs": {
+      "all": "Alle Benachrichtigungen",
+      "settings": "Einstellungen"
+    },
+    "types": {
+      "deadlineReminder": "Deadline",
+      "overdue": "Überfällig",
+      "submission": "Einreichung",
+      "approval": "Freigabe",
+      "rejection": "Ablehnung",
+      "icDifference": "IC-Differenz",
+      "newPeriod": "Neue Periode",
+      "rollover": "Rollover",
+      "validationError": "Validierung",
+      "consolidation": "Konsolidierung",
+      "manualReminder": "Erinnerung",
+      "other": "Sonstige"
+    },
+    "filters": {
+      "searchPlaceholder": "Suche nach Titel, Beschreibung oder Entity ID...",
+      "type": "Typ",
+      "allTypes": "Alle Typen",
+      "status": "Status",
+      "all": "Alle",
+      "unread": "Ungelesen",
+      "read": "Gelesen"
+    },
+    "actions": {
+      "markAllAsRead": "Alle als gelesen markieren",
+      "markAsRead": "Als gelesen markieren",
+      "markAsUnread": "Als ungelesen markieren"
+    },
+    "time": {
+      "justNow": "gerade eben",
+      "minutesAgo": "vor {{count}} Min.",
+      "hoursAgo": "vor {{count}} Stunde",
+      "hoursAgo_plural": "vor {{count}} Stunden",
+      "yesterday": "gestern",
+      "daysAgo": "vor {{count}} Tag",
+      "daysAgo_plural": "vor {{count}} Tagen"
+    },
+    "settings": {
+      "title": "Benachrichtigungs-Einstellungen",
+      "description": "Konfigurieren Sie, wie und wann Sie benachrichtigt werden.",
+      "deadlineReminders": "Deadline-Erinnerungen",
+      "deadlineRemindersDesc": "Benachrichtigungen vor ablaufenden Upload-Deadlines",
+      "reminderLeadTime": "Erinnerungs-Vorlauf",
+      "reminderLeadTimeDesc": "Wie viele Tage vor der Deadline soll erinnert werden?",
+      "submissionUpdates": "Einreichungs-Updates",
+      "submissionUpdatesDesc": "Benachrichtigungen bei neuen Einreichungen und Uploads",
+      "icDifferences": "IC-Differenzen",
+      "icDifferencesDesc": "Benachrichtigungen bei erkannten Intercompany-Differenzen",
+      "workflowStatus": "Workflow-Status",
+      "workflowStatusDesc": "Benachrichtigungen bei Freigaben, Ablehnungen und Statusänderungen",
+      "dailySummary": "Tägliche Zusammenfassung",
+      "dailySummaryDesc": "Eine tägliche E-Mail mit einer Übersicht aller offenen Aufgaben",
+      "days": "{{count}} Tag",
+      "days_plural": "{{count}} Tage",
+      "channels": {
+        "emailInApp": "E-Mail + In-App",
+        "inAppOnly": "Nur In-App",
+        "off": "Aus"
+      },
+      "mandatoryNote": "Ablehnung- und Überfällig-Benachrichtigungen sind Pflicht und können nicht deaktiviert werden."
+    }
+  },
+  "reconciliation": {
+    "title": "IC-Abstimmung",
+    "subtitle": "Intercompany Reconciliation — Zero Tolerance",
+    "exportReport": "IC-Report exportieren",
+    "status": {
+      "open": "Offen",
+      "inClarification": "In Klärung",
+      "resolved": "Gelöst",
+      "accepted": "Akzeptiert"
+    },
+    "category": {
+      "lul": "L+L",
+      "loans": "Darlehen",
+      "cashpool": "Cashpool",
+      "other": "Sonstige",
+      "revenueExpenses": "Umsatz/Aufwand"
+    },
+    "summary": {
+      "openDifferences": "Offene Differenzen",
+      "inClarification": "In Klärung",
+      "totalDifference": "Gesamtdifferenz",
+      "reconciled": "Abgestimmt",
+      "totalSum": "Gesamtsumme",
+      "icPositions": "{{count}} IC-Position",
+      "icPositions_plural": "{{count}} IC-Positionen",
+      "ofPositions": "von {{total}} Positionen ({{percent}}%)"
+    },
+    "tabs": {
+      "matrix": "Matrix",
+      "differencesList": "Differenzen-Liste"
+    },
+    "matrix": {
+      "entityAB": "Entity A ↓ / B →",
+      "legend": "Legende",
+      "noDifference": "Keine Differenz",
+      "lessThan1k": "< 1.000 EUR",
+      "lessThan10k": "< 10.000 EUR",
+      "moreThan10k": "> 10.000 EUR"
+    },
+    "list": {
+      "searchPlaceholder": "Gesellschaft suchen...",
+      "allStatuses": "Alle Status",
+      "allCategories": "Alle Kategorien",
+      "category": "Kategorie",
+      "entityA": "Entity A",
+      "entityB": "Entity B",
+      "amountA": "Betrag A",
+      "amountB": "Betrag B",
+      "difference": "Differenz",
+      "noPositionsFound": "Keine IC-Positionen gefunden.",
+      "showingPositions": "{{filtered}} von {{total}} Positionen angezeigt"
+    },
+    "detail": {
+      "title": "IC-Detail",
+      "description": "Bilaterale Abstimmung nach Kategorie",
+      "entityAReports": "Entity A meldet (Forderung)",
+      "entityBReports": "Entity B meldet (Verbindlichkeit)",
+      "totalDifference": "Gesamtdifferenz",
+      "breakdownByCategory": "Aufschlüsselung nach Kategorie",
+      "commentsForClarification": "Kommentare zur Klärung",
+      "noComments": "Keine Kommentare vorhanden.",
+      "newComment": "Neuer Kommentar",
+      "commentPlaceholder": "Kommentar zur Klärung eingeben...",
+      "saving": "Wird gespeichert...",
+      "sendComment": "Kommentar senden",
+      "setInClarification": "In Klärung setzen",
+      "resolve": "Lösen",
+      "accept": "Akzeptieren (GC)"
+    },
+    "errors": {
+      "loadError": "IC-Abstimmungsdaten konnten nicht geladen werden.",
+      "noActivePeriod": "Keine aktive Periode gefunden. Bitte erstellen oder aktivieren Sie eine Periode, um IC-Abstimmungen anzuzeigen."
+    },
+    "export": {
+      "amountEntityA": "Betrag Entity A (EUR)",
+      "amountEntityB": "Betrag Entity B (EUR)",
+      "difference": "Differenz (EUR)",
+      "commentA": "Kommentar A",
+      "commentB": "Kommentar B"
+    }
+  },
+  "rollover": {
+    "title": "Period Rollover",
+    "subtitle": "Vorjahreswerte (Vorträge) in neue Berichtsperiode übernehmen",
+    "loadError": "Fehler beim Laden der Daten. Bitte versuchen Sie es erneut.",
+    "steps": {
+      "selectPeriods": "Perioden wählen",
+      "selectEntities": "Gesellschaften",
+      "execute": "Ausführen"
+    },
+    "step1": {
+      "title": "Quellperiode & Zielperiode",
+      "description": "Wählen Sie die Quellperiode (abgeschlossen) und die Zielperiode (neue Periode).",
+      "sourcePeriod": "Quellperiode (Vorjahr)",
+      "targetPeriod": "Zielperiode (Berichtsjahr)",
+      "selectSourcePeriod": "Quellperiode wählen...",
+      "selectTargetPeriod": "Zielperiode wählen...",
+      "preview": "Vorschau",
+      "previewDescription": "Bilanz-Endbestände aus <strong>{{sourceLabel}}</strong> werden als Vorjahreswerte / Anfangsbestände in <strong>{{targetLabel}}</strong> übernommen.",
+      "balanceAccountsRule": "Bilanzkonten (100000-496000): Endbestand → Anfangsbestand",
+      "plAccountsRule": "GuV-Konten (500000-647000): NICHT übertragen (starten bei 0)",
+      "retainedEarningsRule": "Gewinnvortrag (321000): Automatische Berechnung",
+      "schedulesRule": "Anlagen-, Rückstellungs-, Eigenkapitalspiegel: Endbestände übernommen"
+    },
+    "step2": {
+      "title": "Gesellschaften auswählen",
+      "selectedCount": "{{selected}} von {{total}} Gesellschaften ausgewählt",
+      "selectAll": "Alle auswählen",
+      "deselectAll": "Alle abwählen",
+      "searchPlaceholder": "Gesellschaft suchen...",
+      "allCountries": "Alle Länder",
+      "entityId": "Entity-ID",
+      "name": "Name",
+      "country": "Land",
+      "currency": "Währung",
+      "status": "Status"
+    },
+    "step3": {
+      "title": "Rollover-Zusammenfassung",
+      "entities": "Gesellschaften",
+      "balanceAccounts": "Bilanzkonten",
+      "sourcePeriod": "Quellperiode",
+      "targetPeriod": "Zielperiode",
+      "categoriesTitle": "Folgende Kategorien werden übertragen:",
+      "category1": "Bilanzkonten (Endbestände → Anfangsbestände)",
+      "category2": "Anlagenspiegel (Bruttowerte + kum. AfA)",
+      "category3": "Rückstellungsspiegel (Endbestände)",
+      "category4": "Eigenkapitalspiegel (alle EK-Komponenten)",
+      "category5": "Gewinnvortrag (automatische Berechnung)",
+      "startButton": "Rollover starten",
+      "running": "Rollover wird ausgeführt...",
+      "progressText": "{{percentage}}% — {{current}} von {{total}} Gesellschaften",
+      "completed": "Rollover abgeschlossen",
+      "completedDescription": "{{successCount}} Gesellschaften erfolgreich, {{totalAccounts}} Konten übertragen, {{totalWarnings}} Warnungen",
+      "entity": "Entity",
+      "name": "Name",
+      "accounts": "Konten",
+      "warnings": "Warnungen",
+      "status": "Status"
+    },
+    "status": {
+      "success": "Erfolgreich",
+      "skipped": "Übersprungen",
+      "error": "Fehler"
+    },
+    "navigation": {
+      "back": "Zurück",
+      "next": "Weiter",
+      "done": "Fertig"
+    }
+  },
+  "seed": {
+    "title": "Seed Test Data",
+    "subtitle": "Test-Daten für die Entwicklung erstellen",
+    "card": {
+      "title": "Test-Daten erstellen",
+      "description": "Dieser Button erstellt einen Admin-Benutzer, eine Test-Gesellschaft und eine Test-Periode."
+    },
+    "button": {
+      "seedData": "Seed Data",
+      "creating": "Wird erstellt..."
+    },
+    "log": {
+      "title": "Log",
+      "checkingAdminUser": "Prüfe auf vorhandenen Admin-Benutzer...",
+      "adminUserExists": "ℹ️ Admin-Benutzer existiert bereits, überspringe",
+      "creatingAdminUser": "Erstelle Admin-Benutzer...",
+      "adminUserCreated": "✅ Admin-Benutzer erstellt",
+      "creatingTestEntity": "Erstelle Test-Gesellschaft...",
+      "testEntityCreated": "✅ Test-Gesellschaft erstellt",
+      "testEntityExists": "ℹ️ Test-Gesellschaft existiert bereits",
+      "entityCreationFailed": "⚠️ Gesellschaftserstellung fehlgeschlagen: {{message}}",
+      "creatingTestPeriod": "Erstelle Test-Periode...",
+      "testPeriodCreated": "✅ Test-Periode erstellt",
+      "testPeriodExists": "ℹ️ Test-Periode existiert bereits",
+      "periodCreationFailed": "⚠️ Periodenerstellung fehlgeschlagen: {{message}}",
+      "seedComplete": "\n🎉 Seed abgeschlossen!",
+      "error": "\n❌ Fehler: {{message}}"
+    },
+    "toast": {
+      "successTitle": "Seed erfolgreich",
+      "successDescription": "Test-Daten wurden erstellt. Bitte laden Sie die Seite neu.",
+      "errorTitle": "Seed fehlgeschlagen",
+      "errorDescription": "Ein Fehler ist beim Erstellen der Daten aufgetreten."
+    }
+  },
+  "consolidation": {
+    "title": "Konsolidierung",
+    "subtitle": "Konsolidierungsmodul — 7-Schritt-Wizard, Ergebnisse & Eliminierungsjournal",
+    "tabs": {
+      "wizard": "Wizard",
+      "results": "Ergebnisse",
+      "journal": "Eliminierungsjournal"
+    },
+    "wizard": {
+      "title": "Konsolidierungs-Wizard",
+      "description": "Schrittweise Durchführung der Konzernkonsolidierung",
+      "selectPeriod": "Periode wählen...",
+      "current": "aktuell",
+      "prerequisiteCheck": "Voraussetzungsprüfung",
+      "step": "Schritt",
+      "runStep": "Schritt ausführen",
+      "runAllSteps": "Alle Schritte ausführen",
+      "resetStep": "Schritt zurücksetzen",
+      "totalProgress": "Gesamtfortschritt",
+      "stepsCompleted": "{{completed}}/{{total}} Schritte abgeschlossen"
+    },
+    "status": {
+      "completed": "Abgeschlossen",
+      "running": "Wird ausgeführt...",
+      "pending": "Ausstehend"
+    },
+    "prerequisites": {
+      "icDifferences": "IC-Differenzen aufgelöst",
+      "exchangeRates": "Wechselkurse verfügbar",
+      "activeEntities": "Gesellschaften aktiv",
+      "period": "Konsolidierungsperiode",
+      "entries": "{{count}} Buchung",
+      "entries_plural": "{{count}} Buchungen",
+      "noIcEntries": "Noch keine IC-Buchungen",
+      "eurOnly": "Nur EUR",
+      "noRates": "Keine Kurse hinterlegt",
+      "entitiesActive": "{{count}} Gesellschaft aktiv",
+      "entitiesActive_plural": "{{count}} Gesellschaften aktiv",
+      "noPeriod": "Keine Periode gewählt"
+    },
+    "steps": {
+      "fxTranslation": {
+        "name": "Währungsumrechnung (FX Translation)",
+        "short": "FX Translation",
+        "description": "Währungsumrechnung — Stichtags- und Durchschnittskursmethode",
+        "noEntities": "Keine Fremdwährungsgesellschaften oder Wechselkurse vorhanden."
+      },
+      "summation": {
+        "name": "Summenbilanz (HB I)",
+        "short": "Summenbilanz",
+        "description": "Summenbilanz HB I — Zusammenführung aller Einzelabschlüsse",
+        "total": "Summe (HB I)",
+        "beforeConsolidation": "Vor Konsolidierungsbuchungen ({{count}} Buchung)",
+        "beforeConsolidation_plural": "Vor Konsolidierungsbuchungen ({{count}} Buchungen)",
+        "noEntries": "Noch keine Summenbilanz-Buchungen vorhanden.",
+        "totalHB1": "Gesamt HB I"
+      },
+      "icEliminationBS": {
+        "name": "Schuldenkonsolidierung (IC Bilanz)",
+        "short": "IC Bilanz",
+        "description": "Schuldenkonsolidierung — Eliminierung konzerninterner Salden (Bilanz)",
+        "noEntries": "Keine IC-Eliminierungsbuchungen (Bilanz) vorhanden.",
+        "totalEliminations": "Summe IC-Eliminierungen (Bilanz)"
+      },
+      "icEliminationPL": {
+        "name": "Aufwands-/Ertragskonsolidierung (IC GuV)",
+        "short": "IC GuV",
+        "description": "Aufwands- und Ertragskonsolidierung — Eliminierung IC-Umsätze und IC-Aufwand",
+        "noEntries": "Keine IC-Eliminierungsbuchungen (GuV) vorhanden.",
+        "totalEliminations": "Summe IC-Eliminierungen (GuV)"
+      },
+      "icProfitElimination": {
+        "name": "Zwischengewinneliminierung",
+        "short": "Zwischengewinne",
+        "description": "Zwischengewinneliminierung — Eliminierung unrealisierter Gewinne",
+        "noEntries": "Keine Zwischengewinneliminierungen vorhanden.",
+        "totalEliminations": "Summe Zwischengewinneliminierung"
+      },
+      "capitalConsolidation": {
+        "name": "Kapitalkonsolidierung",
+        "short": "Kapitalkonsolid.",
+        "description": "Kapitalkonsolidierung — Aufrechnung Beteiligungsbuchwert gegen anteiliges Eigenkapital",
+        "noEntries": "Keine Kapitalkonsolidierungsbuchungen vorhanden.",
+        "totalConsolidation": "Summe Kapitalkonsolidierung"
+      },
+      "groupStatements": {
+        "name": "Konzernabschluss",
+        "short": "Konzernabschluss",
+        "description": "Konzernabschluss — Finale Prüfung und Abstimmung",
+        "balanceCheckPassed": "Bilanzprüfung bestanden",
+        "balanceCheckFailed": "Bilanzprüfung: Differenz vorhanden",
+        "balanceTotal": "Saldo aller Buchungen",
+        "summary": "Zusammenfassung Konzernabschluss",
+        "consolidationScope": "Konsolidierungskreis",
+        "entitiesCount": "{{count}} Gesellschaft",
+        "entitiesCount_plural": "{{count}} Gesellschaften",
+        "eliminationEntries": "Eliminierungsbuchungen",
+        "entriesCount": "{{count}} Buchung",
+        "entriesCount_plural": "{{count}} Buchungen",
+        "totalICBS": "Summe IC-Eliminierungen (Bilanz)",
+        "totalICPL": "Summe IC-Eliminierungen (GuV)",
+        "totalCapital": "Summe Kapitalkonsolidierung",
+        "totalICProfit": "Summe Zwischengewinneliminierung",
+        "closingEntries": "Abschlussbuchungen"
+      }
+    },
+    "table": {
+      "entity": "Gesellschaft",
+      "entityA": "Gesellschaft A",
+      "entityB": "Gesellschaft B",
+      "currency": "Währung",
+      "spotRate": "Stichtagskurs",
+      "averageRate": "Durchschnittskurs",
+      "accountDebit": "Konto (Soll)",
+      "accountCredit": "Konto (Haben)",
+      "amountEUR": "Betrag (EUR)",
+      "description": "Beschreibung",
+      "translationEntries": "Umrechnungsbuchungen",
+      "sellingEntity": "Liefernde Gesellschaft",
+      "receivingEntity": "Empfangende Gesellschaft",
+      "icProfitEUR": "Zwischengewinn (EUR)",
+      "step": "Schritt"
+    },
+    "results": {
+      "totalEntries": "Buchungen gesamt",
+      "consolidationEntries": "Konsolidierungsbuchungen",
+      "icEliminationsBS": "IC-Eliminierungen (Bilanz)",
+      "icEliminationsPL": "IC-Eliminierungen (GuV)",
+      "capitalConsolidation": "Kapitalkonsolidierung",
+      "entries": "{{count}} Buchung",
+      "entries_plural": "{{count}} Buchungen",
+      "entriesByStep": "Konsolidierungsbuchungen nach Schritt",
+      "period": "Periode",
+      "noEntries": "Noch keine Konsolidierungsbuchungen für diese Periode vorhanden.",
+      "exchangeRates": "Wechselkurse",
+      "exchangeRatesDescription": "Stichtags- und Durchschnittskurse für die gewählte Periode",
+      "noExchangeRates": "Keine Wechselkurse für diese Periode vorhanden."
+    },
+    "journal": {
+      "title": "Eliminierungsjournal",
+      "description": "Alle Konsolidierungsbuchungen mit Filter- und Suchfunktion",
+      "step": "Schritt",
+      "allSteps": "Alle Schritte",
+      "searchAccount": "Konto suchen",
+      "accountPlaceholder": "Kontonummer oder -name...",
+      "searchEntity": "Gesellschaft suchen",
+      "entityPlaceholder": "Gesellschaftsname...",
+      "entriesCount": "{{filtered}} von {{total}} Buchungen",
+      "noEntries": "Keine Buchungen gefunden. Bitte passen Sie die Filter an."
+    },
+    "errors": {
+      "exchangeRatesLoadError": "Wechselkurse konnten nicht geladen werden.",
+      "entriesLoadError": "Konsolidierungsbuchungen konnten nicht geladen werden."
+    }
+  },
+  "validationChecklist": {
+    "title": "Validierungs-Checkliste",
+    "subtitle": "Prüfen Sie alle Validierungsregeln vor dem Submit",
+    "buttons": {
+      "runAll": "Alle Validierungen ausführen",
+      "executing": "Ausführung läuft..."
+    },
+    "filters": {
+      "entity": "Gesellschaft",
+      "selectEntity": "Gesellschaft wählen",
+      "period": "Periode",
+      "noActivePeriod": "Keine aktive Periode",
+      "category": "Kategorie",
+      "allCategories": "Alle Kategorien"
+    },
+    "gate": {
+      "title": "Submit-Gate Status",
+      "submitAllowed": "Alle Validierungen bestanden — Submit ist möglich",
+      "submitBlocked": "Submit ist gesperrt — beheben Sie die Fehler",
+      "progress": "Fortschritt: {{passed}} / {{total}} Regeln bestanden",
+      "passed": "Bestanden",
+      "failed": "Fehlgeschlagen",
+      "notRun": "Nicht ausgeführt",
+      "error": "Fehler",
+      "blockingIssues": "Blockierende Probleme:"
+    },
+    "rules": {
+      "title": "Validierungsregeln ({{count}} Regeln)",
+      "noRules": "Keine aktiven Validierungsregeln vorhanden."
+    },
+    "table": {
+      "status": "Status",
+      "ruleId": "Regel-ID",
+      "name": "Bezeichnung",
+      "category": "Kategorie",
+      "result": "Ergebnis",
+      "lastChecked": "Zuletzt geprüft",
+      "action": "Aktion"
+    },
+    "status": {
+      "pass": "Bestanden",
+      "fail": "Fehlgeschlagen",
+      "notRun": "Nicht ausgeführt",
+      "error": "Fehler"
+    },
+    "category": {
+      "balance": "Saldierung",
+      "completeness": "Vollständigkeit",
+      "plausibility": "Plausibilität",
+      "crossSchedule": "Cross-Schedule"
+    },
+    "messages": {
+      "validationsExecuted": "Validierungen ausgeführt",
+      "rulesChecked": "{{total}} Regeln geprüft: {{passed}} bestanden, {{failed}} fehlgeschlagen",
+      "ruleExecuted": "Regel ausgeführt",
+      "ruleChecked": "Regel {{ruleId}} wurde geprüft"
+    },
+    "errors": {
+      "missingEntityPeriodUser": "Gesellschaft, Periode oder Benutzer nicht gefunden",
+      "validationsExecutionFailed": "Validierungen konnten nicht ausgeführt werden: {{error}}",
+      "unknownError": "Unbekannter Fehler",
+      "ruleExecutionFailed": "Regel konnte nicht ausgeführt werden"
+    }
+  }
+}
